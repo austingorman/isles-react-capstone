@@ -10,14 +10,21 @@ body {
   width: 300px;
 }
 #addItemButton {
+  font-size: 15px;
+  font-weight: bold;
   background-color: sandybrown;
 }
 #submitItemButton {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: sandybrown;
+}
+#editButton {
   background-color: sandybrown;
 }
 .groceryItems {
   margin: auto;
-  border-top: 1px solid white;
+  border-top: 1px solid rgb(221, 133, 111);
   background-color: cornsilk;
   align-content: center;
 }
