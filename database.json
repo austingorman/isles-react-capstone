@@ -8,11 +8,11 @@
   ],
   "items": [
     {
-      "id": 1,
-      "name": "Harvard Winchester",
-      "aisle": 1,
-      "quantity": 1,
-      "archived": false
+      "quantity": "2",
+      "name": "Dog Treats",
+      "aisle": "25",
+      "archived": false,
+      "id": 1
     }
   ]
 }

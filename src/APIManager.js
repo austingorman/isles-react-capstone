@@ -16,13 +16,18 @@ const ApiManager = Object.create(
       }
     },
     postItem: {
-      value: (collectionName, theObject) => {
-        return fetch(`http://localhost:5002/${collectionName}`, {
+      value: (quantity, itemName, aisle, archived) => {
+        return fetch(`http://localhost:5002/items`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(theObject)
+          body: JSON.stringify({
+            quantity: quantity,
+            name: itemName,
+            aisle: aisle,
+            archived: archived
+          })
         });
       }
     },
