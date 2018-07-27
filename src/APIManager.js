@@ -1,4 +1,4 @@
-const ApiManager = Object.create(
+const APIManager = Object.create(
   {},
   {
     getAll: {
@@ -16,13 +16,31 @@ const ApiManager = Object.create(
       }
     },
     postItem: {
-      value: (collectionName, theObject) => {
-        return fetch(`http://localhost:5002/${collectionName}`, {
+      value: (quantity, itemName, aisle, archived) => {
+        return fetch(`http://localhost:5002/items`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(theObject)
+          body: JSON.stringify({
+            quantity: quantity,
+            name: itemName,
+            aisle: aisle,
+            archived: archived
+          })
+        });
+      }
+    },
+    patchItem: {
+      value: (itemId, archived) => {
+        return fetch(`http://localhost:5002/items/${itemId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            archived: archived
+          })
         });
       }
     },
@@ -40,4 +58,4 @@ const ApiManager = Object.create(
   }
 );
 
-export default ApiManager;
+export default APIManager;
