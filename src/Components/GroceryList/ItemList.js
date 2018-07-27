@@ -26,7 +26,9 @@ export default class ItemList extends Component {
             <input id="item" name="item" type="text" />
             <label>Aisle</label>
             <input id="aisle" name="aisle" type="text" />
-            <button type="submit">Submit</button>
+            <button id="submitItemButton" type="submit">
+              Submit
+            </button>
           </form>
         )
       });
@@ -45,27 +47,34 @@ export default class ItemList extends Component {
         return fetch("http://localhost:5002/items");
       })
       .then(a => a.json())
-      .then(
+      .then(() => {
         APIManager.getAll("items").then(items =>
           this.setState({
-            item: items,
-            toggleForms: ""
+            item: items
           })
-        )
+        );
+      })
+      .then(
+        this.setState({
+          toggleForms: ""
+        })
       );
   };
 
   render() {
     return (
       <React.Fragment>
-        <div className="container">
-          <button id="addItemButton" onClick={this.formLauncher}>
-            Add New Grocery Item
-          </button>
-          {this.state.toggleForms}
+        <div>
+          <div>
+            <button id="addItemButton" onClick={this.formLauncher}>
+              Add New Grocery Item
+            </button>
+            {this.state.toggleForms}
+          </div>
+          <div className="groceryItems">
+            {this.state.item.map(item => <Item key={item.id} item={item} />)}
+          </div>
         </div>
-        {this.state.item.map(item => <Item key={item.id} item={item} />)}
-        <div />
       </React.Fragment>
     );
   }
