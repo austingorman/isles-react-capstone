@@ -3,17 +3,18 @@ import Item from "./Item";
 import APIManager from "../../APIManager";
 
 export default class ItemList extends Component {
-  state = {
-    item: [],
-    toggleForms: ""
+  state = { item: [], toggleForms: "" };
+
+  setTheState = () => {
+    APIManager.getAll("items").then(items =>
+      this.setState({
+        item: items
+      })
+    );
   };
 
   componentDidMount() {
-    APIManager.getAll("items").then(items => {
-      this.setState({
-        item: items
-      });
-    });
+    this.setTheState();
   }
 
   formLauncher = () => {
@@ -22,11 +23,11 @@ export default class ItemList extends Component {
         toggleForms: (
           <form onSubmit={this.addNewItem}>
             <label>Quantity</label>
-            <input id="quantity" name="quantity" type="number" />
+            <input className="inputForm" name="quantity" type="number" />
             <label>Item</label>
-            <input id="item" name="item" type="text" />
+            <input className="inputForm" name="item" type="text" />
             <label>Aisle</label>
-            <input id="aisle" name="aisle" type="text" />
+            <input className="inputForm" name="aisle" type="text" />
             <button id="submitItemButton" type="submit">
               Submit
             </button>
@@ -55,11 +56,7 @@ export default class ItemList extends Component {
           })
         );
       })
-      .then(
-        this.setState({
-          toggleForms: ""
-        })
-      );
+      .then(this.setState({ toggleForms: "" }));
   };
 
   archiver = itemId => {
@@ -82,6 +79,7 @@ export default class ItemList extends Component {
     return (
       <React.Fragment>
         <div>
+          <h1>🏝 isles 🏝</h1>
           <div>
             <button id="addItemButton" onClick={this.formLauncher}>
               Add New Grocery Item
@@ -90,7 +88,12 @@ export default class ItemList extends Component {
           </div>
           <div className="groceryItems">
             {this.state.item.map(item => (
-              <Item key={item.id} item={item} archiver={this.archiver} />
+              <Item
+                key={item.id}
+                item={item}
+                archiver={this.archiver}
+                setTheState={this.setTheState}
+              />
             ))}
           </div>
         </div>

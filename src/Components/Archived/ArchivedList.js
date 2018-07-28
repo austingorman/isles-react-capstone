@@ -13,6 +13,6 @@ export default class ArchivedList extends Component {
     );
   };
   render() {
-    return <h1>ArchivedItem</h1>;
+    return <h2>Archive</h2>;
   }
 }
