@@ -45,13 +45,17 @@ const APIManager = Object.create(
       }
     },
     updateItem: {
-      value: (collectionName, itemId, dataObject) => {
-        return fetch(`http://localhost:5002/${collectionName}/${itemId}`, {
+      value: (itemId, quantity, itemName, aisle) => {
+        return fetch(`http://localhost:5002/items/${itemId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(dataObject)
+          body: JSON.stringify({
+            quantity: quantity,
+            name: itemName,
+            aisle: aisle
+          })
         });
       }
     }
