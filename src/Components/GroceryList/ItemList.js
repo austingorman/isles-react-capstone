@@ -5,6 +5,9 @@ import APIManager from "../../APIManager";
 export default class ItemList extends Component {
   state = { item: [], toggleForms: "" };
 
+  componentDidMount() {
+    this.setTheState();
+  }
   setTheState = () => {
     APIManager.getAll("items").then(items =>
       this.setState({
@@ -12,10 +15,6 @@ export default class ItemList extends Component {
       })
     );
   };
-
-  componentDidMount() {
-    this.setTheState();
-  }
 
   formLauncher = () => {
     if (this.state.toggleForms === "") {

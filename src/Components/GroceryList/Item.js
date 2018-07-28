@@ -52,24 +52,28 @@ export default class Item extends Component {
   };
 
   render() {
-    return (
-      <div id="groceryItems">
-        <input
-          className="checkBox"
-          type="checkbox"
-          checked={this.props.item.archived}
-          onChange={() => this.props.archiver(this.props.item.id)}
-        />
-        <h5 className="groceryItem">{this.props.item.quantity}</h5>
-        <h5 className="groceryItem">{this.props.item.name}</h5>
-        <h5 className="groceryItem">in aisle</h5>
-        <h5 className="groceryItem">{this.props.item.aisle}</h5>
+    if (this.props.item.archived === false) {
+      return (
+        <div id="groceryItems">
+          <input
+            className="checkBox"
+            type="checkbox"
+            checked={this.props.item.archived}
+            onChange={() => this.props.archiver(this.props.item.id)}
+          />
+          <h5 className="groceryItem">{this.props.item.quantity}</h5>
+          <h5 className="groceryItem">{this.props.item.name}</h5>
+          <h5 className="groceryItem">in aisle</h5>
+          <h5 className="groceryItem">{this.props.item.aisle}</h5>
 
-        <button id="editButton" type="edit" onClick={this.formLauncher}>
-          Edit
-        </button>
-        {this.state.toggleEditForms}
-      </div>
-    );
+          <button id="editButton" type="edit" onClick={this.formLauncher}>
+            Edit
+          </button>
+          {this.state.toggleEditForms}
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
