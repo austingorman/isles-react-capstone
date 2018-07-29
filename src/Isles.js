@@ -7,11 +7,8 @@ export default class Isles extends Component {
   state = { item: [], archivedItem: [] };
 
   setItemState = () => {
-    APIManager.getAll("items").then(items => {
-      this.setState({
-        item: items,
-        archivedItem: items
-      });
+    APIManager.getAll("items?_sort=aisle").then(items => {
+      this.setState({ item: items, archivedItem: items });
     });
   };
   render() {
