@@ -9,8 +9,8 @@ const APIManager = Object.create(
       }
     },
     deleteItem: {
-      value: (collectionName, itemId) => {
-        return fetch(`http://localhost:5002/${collectionName}/${itemId}`, {
+      value: itemId => {
+        return fetch(`http://localhost:5002/items/${itemId}`, {
           method: "DELETE"
         });
       }

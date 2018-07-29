@@ -24,7 +24,7 @@ export default class ItemList extends Component {
             </div>
             <div className="inputForm">
               <label>Aisle</label>
-              <input className="aisleForm" name="aisle" type="text" />
+              <input className="aisleForm" name="aisle" type="number" />
             </div>
             <button id="submitItemButton" type="submit">
               Submit
@@ -48,7 +48,7 @@ export default class ItemList extends Component {
       })
       .then(a => a.json())
       .then(() => {
-        APIManager.getAll("items").then(items =>
+        APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
           this.props.setTheState({
             item: items
           })

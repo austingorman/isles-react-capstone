@@ -33,6 +33,7 @@ export default class ArchivedList extends Component {
             key={archivedItem.id}
             archivedItem={archivedItem}
             unarchiver={this.unarchiver}
+            setTheState={this.props.setTheState}
           />
         ))}
       </div>
