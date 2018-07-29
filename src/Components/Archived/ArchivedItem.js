@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import APIManager from "../../APIManager";
 
 export default class ArchivedItem extends Component {
   render() {
@@ -13,7 +12,7 @@ export default class ArchivedItem extends Component {
           <button
             id="editButton"
             type="submit"
-            onClick={this.props.unarchiver(this.props.archivedItem.id)}
+            onClick={() => this.props.unarchiver(this.props.archivedItem.id)}
           >
             Add
           </button>

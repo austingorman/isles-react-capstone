@@ -3,30 +3,29 @@ import Item from "./Item";
 import APIManager from "../../APIManager";
 
 export default class ItemList extends Component {
-  state = { item: [], toggleForms: "" };
+  state = { toggleForms: "" };
 
   componentDidMount() {
-    this.setTheState();
+    this.props.setTheState();
   }
-  setTheState = () => {
-    APIManager.getAll("items").then(items =>
-      this.setState({
-        item: items
-      })
-    );
-  };
 
   formLauncher = () => {
     if (this.state.toggleForms === "") {
       this.setState({
         toggleForms: (
-          <form onSubmit={this.addNewItem}>
-            <label>Quantity</label>
-            <input className="inputForm" name="quantity" type="number" />
-            <label>Item</label>
-            <input className="inputForm" name="item" type="text" />
-            <label>Aisle</label>
-            <input className="inputForm" name="aisle" type="text" />
+          <form onSubmit={this.addNewItem} id="inputForms">
+            <div className="inputForm">
+              <label>Qty</label>
+              <input className="quantityForm" name="quantity" type="number" />
+            </div>
+            <div className="inputForm">
+              <label>Item</label>
+              <input className="itemForm" name="item" type="text" />
+            </div>
+            <div className="inputForm">
+              <label>Aisle</label>
+              <input className="aisleForm" name="aisle" type="text" />
+            </div>
             <button id="submitItemButton" type="submit">
               Submit
             </button>
@@ -50,7 +49,7 @@ export default class ItemList extends Component {
       .then(a => a.json())
       .then(() => {
         APIManager.getAll("items").then(items =>
-          this.setState({
+          this.props.setTheState({
             item: items
           })
         );
@@ -67,8 +66,9 @@ export default class ItemList extends Component {
       .then(a => a.json())
       .then(() => {
         APIManager.getAll("items").then(items =>
-          this.setState({
-            item: items
+          this.props.setTheState({
+            item: items,
+            archivedItem: items
           })
         );
       });
@@ -86,12 +86,12 @@ export default class ItemList extends Component {
             {this.state.toggleForms}
           </div>
           <div className="groceryItems">
-            {this.state.item.map(item => (
+            {this.props.item.map(item => (
               <Item
                 key={item.id}
                 item={item}
                 archiver={this.archiver}
-                setTheState={this.setTheState}
+                setTheState={this.props.setTheState}
               />
             ))}
           </div>

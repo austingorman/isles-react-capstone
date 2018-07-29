@@ -3,18 +3,9 @@ import ArchivedItem from "../Archived/ArchivedItem";
 import APIManager from "../../APIManager";
 
 export default class ArchivedList extends Component {
-  state = { archivedItem: [] };
-
   componentDidMount() {
-    this.setArchivedState();
+    this.props.setTheState();
   }
-  setArchivedState = () => {
-    APIManager.getAll("items").then(archived =>
-      this.setState({
-        archivedItem: archived
-      })
-    );
-  };
 
   unarchiver = itemId => {
     // event.preventDefault();
@@ -25,7 +16,8 @@ export default class ArchivedList extends Component {
       .then(a => a.json())
       .then(() => {
         APIManager.getAll("items").then(items =>
-          this.setState({
+          this.props.setTheState({
+            items: items,
             archivedItem: items
           })
         );
@@ -36,12 +28,11 @@ export default class ArchivedList extends Component {
     return (
       <div className="archivedItems">
         <h2>Archive</h2>
-        {this.state.archivedItem.map(archivedItem => (
+        {this.props.archivedItem.map(archivedItem => (
           <ArchivedItem
             key={archivedItem.id}
             archivedItem={archivedItem}
             unarchiver={this.unarchiver}
-            setTheState={this.setArchivedState}
           />
         ))}
       </div>

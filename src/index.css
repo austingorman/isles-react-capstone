@@ -25,11 +25,12 @@ h1 {
   font-weight: bold;
   background-color: sandybrown;
   width: 300px;
+  margin: 2px 0px 2px 0px;
 }
 #editButton {
   background-color: sandybrown;
   display: inline;
-  margin: 0px 0px 0px 0px;
+  margin: 0;
   padding: 6px 3px 6px;
   float: right;
   width: 30px;
@@ -41,6 +42,27 @@ h1 {
   background-color: cornsilk;
   width: 300px;
 }
+#inputForms {
+  margin: -1px 10px 2px 10px;
+  display: inline-block;
+}
+#editForms {
+  margin: -1px auto;
+  display: inline-block;
+}
+.inputForm {
+  display: inline;
+  margin: 0px 2px;
+}
+.quantityForm,
+.aisleForm {
+  display: inline;
+  margin: 0px 2px;
+  width: 20px;
+}
+.itemForm {
+  display: inline;
+}
 .groceryItem {
   display: inline;
   margin: 0px 1px 5px 1px;
@@ -50,7 +72,8 @@ h1 {
   margin: 8px 10px 0px 10px;
   display: inline;
 }
-/* USE THIS FOR THE DROPDOWN AISLES */
+
+/* MAYBE USE THIS FOR THE DROPDOWN AISLES */
 /* .Select-option.is-selected {
   color: red;
 } */

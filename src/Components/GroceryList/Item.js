@@ -7,14 +7,35 @@ export default class Item extends Component {
   formLauncher = () => {
     if (this.state.toggleEditForms === "") {
       this.setState({
+        // <form onSubmit={this.editItem}>
         toggleEditForms: (
-          <form onSubmit={this.editItem}>
-            <label>Quantity</label>
-            <input className="inputForm" name="editQuantity" type="number" />
-            <label>Item</label>
-            <input className="inputForm" name="editItem" type="text" />
-            <label>Aisle</label>
-            <input className="inputForm" name="editAisle" type="text" />
+          //   <label>Quantity</label>
+          //   <input className="inputForm" name="editQuantity" type="number" />
+          //   <label>Item</label>
+          //   <input className="inputForm" name="editItem" type="text" />
+          //   <label>Aisle</label>
+          //   <input className="inputForm" name="editAisle" type="text" />
+          //   <button id="submitItemButton" type="submit">
+          //     Submit
+          //   </button>
+          // </form>
+          <form onSubmit={this.editItem} id="editForms">
+            <div className="inputForm">
+              <label>Qty</label>
+              <input
+                className="quantityForm"
+                name="editQuantity"
+                type="number"
+              />
+            </div>
+            <div className="inputForm">
+              <label>Item</label>
+              <input className="itemForm" name="editItem" type="text" />
+            </div>
+            <div className="inputForm">
+              <label>Aisle</label>
+              <input className="aisleForm" name="editAisle" type="text" />
+            </div>
             <button id="submitItemButton" type="submit">
               Submit
             </button>

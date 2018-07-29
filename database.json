@@ -8,27 +8,6 @@
   ],
   "items": [
     {
-      "quantity": "3",
-      "name": "dog treats",
-      "aisle": "33",
-      "id": 1,
-      "archived": false
-    },
-    {
-      "quantity": "2",
-      "name": "Cat Treats",
-      "aisle": "3333",
-      "archived": false,
-      "id": 4
-    },
-    {
-      "quantity": "3",
-      "name": "updogs",
-      "aisle": "2",
-      "archived": false,
-      "id": 6
-    },
-    {
       "quantity": "5",
       "name": "Strawberry Jam",
       "aisle": "15",
@@ -36,18 +15,25 @@
       "id": 7
     },
     {
-      "quantity": "200",
-      "name": "chocolates",
-      "aisle": "2",
+      "quantity": "3",
+      "name": "bag of coffee",
+      "aisle": "3",
       "archived": false,
       "id": 8
     },
     {
-      "quantity": "2",
-      "name": "asdfsda",
-      "aisle": "8",
+      "quantity": "4",
+      "name": "cheerios",
+      "aisle": "9",
       "archived": false,
       "id": 9
+    },
+    {
+      "quantity": "3",
+      "name": "dog treats",
+      "aisle": "4",
+      "archived": false,
+      "id": 10
     }
   ]
 }
