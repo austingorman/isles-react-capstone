@@ -54,7 +54,8 @@ const APIManager = Object.create(
           body: JSON.stringify({
             quantity: quantity,
             name: itemName,
-            aisle: aisle
+            aisle: aisle,
+            archived: false
           })
         });
       }

@@ -8,30 +8,32 @@
   ],
   "items": [
     {
-      "quantity": "200",
-      "name": "dog treats",
-      "aisle": "422222",
-      "id": 1
-    },
-    {
-      "quantity": "22",
-      "name": "things",
-      "aisle": "33",
-      "id": 4
-    },
-    {
-      "quantity": "4",
-      "name": "things",
-      "aisle": "6",
-      "archived": false,
-      "id": 6
-    },
-    {
       "quantity": "5",
       "name": "Strawberry Jam",
       "aisle": "15",
       "archived": false,
       "id": 7
+    },
+    {
+      "quantity": "3",
+      "name": "bag of coffee",
+      "aisle": "3",
+      "archived": false,
+      "id": 8
+    },
+    {
+      "quantity": "4",
+      "name": "cheerios",
+      "aisle": "9",
+      "archived": false,
+      "id": 9
+    },
+    {
+      "quantity": "3",
+      "name": "dog treats",
+      "aisle": "4",
+      "archived": false,
+      "id": 10
     }
   ]
 }
