@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import APIManager from "../../APIManager";
+import Button from "@material-ui/core/Button";
+import Icon from "@material-ui/core/Icon";
+import Card from "@material-ui/core/Card";
 
 export default class ArchivedItem extends Component {
   deleteItem = id => {
@@ -20,26 +23,28 @@ export default class ArchivedItem extends Component {
   render() {
     if (this.props.archivedItem.archived === true) {
       return (
-        <div id="groceryItems">
-          <button
+        <li id="groceryItems">
+          <Button
+            variant="text"
+            color="primary"
             id="deleteButton"
             type="submit"
             onClick={() => this.deleteItem(this.props.archivedItem.id)}
           >
-            X
-          </button>
+            <Icon>delete_forever</Icon>
+          </Button>
           <h5 className="groceryItem">{this.props.archivedItem.quantity}</h5>
           <h5 className="groceryItem">{this.props.archivedItem.name}</h5>
           <h5 className="groceryItem">in aisle</h5>
           <h5 className="groceryItem">{this.props.archivedItem.aisle}</h5>
-          <button
+          <Button
             id="editButton"
             type="submit"
             onClick={() => this.props.unarchiver(this.props.archivedItem.id)}
           >
-            Add
-          </button>
-        </div>
+            <Icon>playlist_add</Icon>
+          </Button>
+        </li>
       );
     } else {
       return null;

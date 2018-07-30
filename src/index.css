@@ -1,17 +1,22 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: aqua;
   display: inline-block;
 }
 * {
   margin: 0 auto;
+  font-family: "Roboto";
 }
 h1 {
   font-size: 55px;
   margin: 10px 25px 0 25px;
   width: 270px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 #addItemButton {
   font-size: 15px;
@@ -22,66 +27,78 @@ h1 {
 }
 #submitItemButton {
   font-size: 15px;
-  font-weight: bold;
+  /* font-weight: bold; */
   background-color: sandybrown;
   width: 300px;
-  margin: 2px 0px 2px 0px;
+  margin: 8px 10px 8px 10px;
+}
+#editSubmitItemButton {
+  font-size: 15px;
+  display: block;
+  background-color: sandybrown;
+  margin: 8px auto;
+  width: auto;
 }
 #deleteButton {
-  background-color: sandybrown;
+  /* background-color: sandybrown; */
   display: inline;
-  margin: 0 10px 0 0;
-  padding: 6px 3px 6px;
+  margin: 0 0px 0 -10px;
+  padding: 8px 0px;
   float: left;
-  width: 30px;
+  width: 10px;
 }
 #editButton {
-  background-color: sandybrown;
+  /* background-color: sandybrown; */
   display: inline;
-  margin: 0;
-  padding: 6px 3px 6px;
+  margin: 0 -10px 0 0px;
+  padding: 0;
   float: right;
-  width: 30px;
+  /* width: 30px; */
+}
+#groceryItemContainer {
+  display: inline-block;
+  margin: 0px auto;
 }
 #groceryItems {
   display: inline-block;
-  margin: 1px 10px 1px 10px;
-  border-top: 1px solid rgb(221, 133, 111);
+  margin: 0 10px;
   background-color: cornsilk;
   width: 300px;
 }
 #inputForms {
-  margin: -1px 10px 2px 10px;
-  display: inline-block;
+  margin: 0 auto;
+  display: block;
+  width: 168px;
 }
 #editForms {
   margin: -1px auto;
   display: inline-block;
 }
+.MuiButton-label-2 {
+  width: auto !important;
+}
 .inputForm {
-  display: inline;
-  margin: 0px 2px;
+  /* display: inline; */
+  margin: 0px auto;
+  width: auto;
 }
 .quantityForm,
 .aisleForm {
-  display: inline;
-  margin: 0px 2px;
-  width: 20px;
+  /* display: inline; */
+  margin: 0px auto;
+  width: auto;
 }
 .itemForm {
   display: inline;
+  margin: 0 auto;
+  width: auto;
 }
 .groceryItem {
   display: inline;
   margin: 0px 1px 5px 1px;
+  /* width: 300px; */
 }
-
 .checkBox {
   margin: 8px 10px 0px 10px;
   display: inline;
 }
-
-/* MAYBE USE THIS FOR THE DROPDOWN AISLES */
-/* .Select-option.is-selected {
-  color: red;
-} */
