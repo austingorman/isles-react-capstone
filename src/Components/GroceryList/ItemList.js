@@ -4,6 +4,7 @@ import APIManager from "../../APIManager";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 import TextField from "@material-ui/core/TextField";
+import Divider from "@material-ui/core/Divider";
 
 export default class ItemList extends Component {
   state = { toggleForms: "" };
@@ -71,8 +72,8 @@ export default class ItemList extends Component {
     event.preventDefault();
     const Quantity = event.target.quantity.value;
     const ItemName = event.target.item.value;
-    const Aisle = parseInt(event.target.aisle.value);
-    console.log(typeof Aisle);
+    const Aisle = parseInt(event.target.aisle.value, 10);
+
     APIManager.postItem(Quantity, ItemName, Aisle, false)
       .then(() => {
         return fetch("http://localhost:5002/items");
@@ -109,7 +110,9 @@ export default class ItemList extends Component {
     return (
       <React.Fragment>
         <div>
-          <h1>🏝 isles 🏝</h1>
+          <header>
+            <h1>isles</h1>
+          </header>
           <div>
             <Button
               variant="contained"
@@ -117,7 +120,8 @@ export default class ItemList extends Component {
               id="addItemButton"
               onClick={this.formLauncher}
             >
-              <Icon>add</Icon>Add New Grocery Item
+              <Icon>add</Icon>
+              <h5>Add New Grocery Item</h5>
             </Button>
             {this.state.toggleForms}
           </div>
@@ -132,6 +136,7 @@ export default class ItemList extends Component {
             ))}
           </ul>
         </div>
+        <Divider />
       </React.Fragment>
     );
   }

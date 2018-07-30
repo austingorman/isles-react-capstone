@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: aqua;
+  background-color: #00e5ff;
   display: inline-block;
 }
 * {
@@ -10,27 +10,41 @@ body {
 }
 h1 {
   font-size: 55px;
-  margin: 10px 25px 0 25px;
-  width: 270px;
+  margin: 0px 10px;
+  color: white;
+}
+header {
+  display: block;
+  margin: 0px;
+  width: 360px;
+  background-color: #304ffe;
+}
+h5 {
+  display: inline;
+  color: white;
 }
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
+
 #addItemButton {
   font-size: 15px;
   font-weight: bold;
-  margin: 5px 10px 2px 10px;
+  margin: 8px auto;
+  display: block;
   background-color: sandybrown;
-  width: 300px;
+  width: auto;
 }
 #submitItemButton {
   font-size: 15px;
   /* font-weight: bold; */
+  display: block;
+
   background-color: sandybrown;
-  width: 300px;
-  margin: 8px 10px 8px 10px;
+  width: auto;
+  margin: 8px auto;
 }
 #editSubmitItemButton {
   font-size: 15px;
@@ -42,7 +56,7 @@ ul {
 #deleteButton {
   /* background-color: sandybrown; */
   display: inline;
-  margin: 0 0px 0 -10px;
+  margin: 0 -10px 0 -10px;
   padding: 8px 0px;
   float: left;
   width: 10px;
@@ -56,14 +70,14 @@ ul {
   /* width: 30px; */
 }
 #groceryItemContainer {
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0px auto;
 }
 #groceryItems {
   display: inline-block;
-  margin: 0 10px;
-  background-color: cornsilk;
-  width: 300px;
+  /* margin: 0 auto; */
+  background-color: #00e5ff;
+  width: 320px;
 }
 #inputForms {
   margin: 0 auto;
@@ -74,8 +88,11 @@ ul {
   margin: -1px auto;
   display: inline-block;
 }
-.MuiButton-label-2 {
+/* .MuiButton-label-2 {
   width: auto !important;
+} */
+.MuiIcon-root-28 {
+  display: inline;
 }
 .inputForm {
   /* display: inline; */

@@ -5,7 +5,6 @@ import Icon from "@material-ui/core/Icon";
 import Checkbox from "@material-ui/core/Checkbox";
 import Card from "@material-ui/core/Card";
 import TextField from "@material-ui/core/TextField";
-import Divider from "@material-ui/core/Divider";
 
 export default class Item extends Component {
   state = { toggleEditForms: [] };
@@ -19,7 +18,6 @@ export default class Item extends Component {
             <div id="inputForms">
               <div className="inputForm">
                 <TextField
-                  id="helperText"
                   label="Quantity"
                   // className={classes.textField}
                   // helperText="Quantity"
@@ -31,7 +29,6 @@ export default class Item extends Component {
               </div>
               <div className="inputForm">
                 <TextField
-                  id="helperText"
                   label="Item Name"
                   // defaultValue="Default Value"
                   className="itemForm"
@@ -41,7 +38,6 @@ export default class Item extends Component {
               </div>
               <div className="inputForm">
                 <TextField
-                  id="helperText"
                   label="Aisle"
                   defaultValue="Default Value"
                   className="aisleForm"
