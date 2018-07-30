@@ -1,87 +1,121 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: aqua;
+  background-color: #00e5ff;
   display: inline-block;
 }
 * {
   margin: 0 auto;
+  font-family: "Roboto";
 }
 h1 {
   font-size: 55px;
-  margin: 10px 25px 0 25px;
-  width: 270px;
+  margin: 0px 10px;
+  color: white;
 }
+header {
+  display: block;
+  margin: 0px;
+  width: 360px;
+  background-color: #304ffe;
+}
+h5 {
+  display: inline;
+  color: white;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 #addItemButton {
   font-size: 15px;
   font-weight: bold;
-  margin: 5px 10px 2px 10px;
+  margin: 8px auto;
+  display: block;
   background-color: sandybrown;
-  width: 300px;
+  width: auto;
 }
 #submitItemButton {
   font-size: 15px;
-  font-weight: bold;
+  /* font-weight: bold; */
+  display: block;
+
   background-color: sandybrown;
-  width: 300px;
-  margin: 2px 0px 2px 0px;
+  width: auto;
+  margin: 8px auto;
+}
+#editSubmitItemButton {
+  font-size: 15px;
+  display: block;
+  background-color: sandybrown;
+  margin: 8px auto;
+  width: auto;
 }
 #deleteButton {
-  background-color: sandybrown;
+  /* background-color: sandybrown; */
   display: inline;
-  margin: 0 10px 0 0;
-  padding: 6px 3px 6px;
+  margin: 0 -10px 0 -10px;
+  padding: 8px 0px;
   float: left;
-  width: 30px;
+  width: 10px;
 }
 #editButton {
-  background-color: sandybrown;
+  /* background-color: sandybrown; */
   display: inline;
-  margin: 0;
-  padding: 6px 3px 6px;
+  margin: 0 -10px 0 0px;
+  padding: 0;
   float: right;
-  width: 30px;
+  /* width: 30px; */
+}
+#groceryItemContainer {
+  /* display: inline-block; */
+  margin: 0px auto;
 }
 #groceryItems {
   display: inline-block;
-  margin: 1px 10px 1px 10px;
-  border-top: 1px solid rgb(221, 133, 111);
-  background-color: cornsilk;
-  width: 300px;
+  /* margin: 0 auto; */
+  background-color: #00e5ff;
+  width: 320px;
 }
 #inputForms {
-  margin: -1px 10px 2px 10px;
-  display: inline-block;
+  margin: 0 auto;
+  display: block;
+  width: 168px;
 }
 #editForms {
   margin: -1px auto;
   display: inline-block;
 }
-.inputForm {
+/* .MuiButton-label-2 {
+  width: auto !important;
+} */
+.MuiIcon-root-28 {
   display: inline;
-  margin: 0px 2px;
+}
+.inputForm {
+  /* display: inline; */
+  margin: 0px auto;
+  width: auto;
 }
 .quantityForm,
 .aisleForm {
-  display: inline;
-  margin: 0px 2px;
-  width: 20px;
+  /* display: inline; */
+  margin: 0px auto;
+  width: auto;
 }
 .itemForm {
   display: inline;
+  margin: 0 auto;
+  width: auto;
 }
 .groceryItem {
   display: inline;
   margin: 0px 1px 5px 1px;
+  /* width: 300px; */
 }
-
 .checkBox {
   margin: 8px 10px 0px 10px;
   display: inline;
 }
-
-/* MAYBE USE THIS FOR THE DROPDOWN AISLES */
-/* .Select-option.is-selected {
-  color: red;
-} */

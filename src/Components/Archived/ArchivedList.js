@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ArchivedItem from "../Archived/ArchivedItem";
 import APIManager from "../../APIManager";
+import Button from "@material-ui/core/Button";
 
 export default class ArchivedList extends Component {
   componentDidMount() {
@@ -26,7 +27,7 @@ export default class ArchivedList extends Component {
 
   render() {
     return (
-      <div className="archivedItems">
+      <ul className="archivedItems">
         <h2>Archive</h2>
         {this.props.archivedItem.map(archivedItem => (
           <ArchivedItem
@@ -36,7 +37,7 @@ export default class ArchivedList extends Component {
             setTheState={this.props.setTheState}
           />
         ))}
-      </div>
+      </ul>
     );
   }
 }
