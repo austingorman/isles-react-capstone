@@ -34,6 +34,13 @@
       "aisle": 7,
       "archived": false,
       "id": 9
+    },
+    {
+      "quantity": "7",
+      "name": "Strawberry Jam",
+      "aisle": 11,
+      "archived": false,
+      "id": 10
     }
   ]
 }

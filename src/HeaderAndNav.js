@@ -8,11 +8,13 @@ export default class HeaderAndNav extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <header>
-          <NavSwipe />
-          <h1>isles</h1>
-        </header>
-        <Nav />
+        <div className="tabs">
+          <header>
+            <NavSwipe />
+            <h1>isles</h1>
+          </header>
+          <Nav />
+        </div>
         {/* <SwipeViews /> */}
       </React.Fragment>
     );

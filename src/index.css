@@ -10,8 +10,8 @@ body {
   font-family: "Roboto";
 }
 h1 {
-  font-size: 55px;
-  margin: 0px 13px;
+  font-size: 40px;
+  margin: 1vw;
   color: #fff8e1;
   display: inline;
 }
@@ -116,11 +116,29 @@ ul {
 /* .MuiButton-label-2 {
   width: auto !important;
 } */
+.tab {
+  background-color: #0d47a1;
+  color: white;
+  display: inline;
+  width: 50vw;
+  margin: -20px;
+}
+.tabs {
+  background-color: #0d47a1;
+  padding: 0 0 0 -20px;
+}
 .MuiIcon-root-28 {
   display: inline;
+  margin: -15px 5px 0 0;
+}
+.MuiTab-wrapper-72 {
+  color: white;
+  width: 100vw;
+  margin: -20px 0 0 0;
 }
 .navSwipe {
   display: inline;
+  margin: 50% 0;
 }
 .sidebar {
   display: block;

@@ -14,10 +14,15 @@ export default class Nav extends Component {
   render() {
     return (
       <Tabs>
-        <Tab label="Shopping List" to="/shoppinglist" component={Link}>
+        <Tab
+          className="tab"
+          label="Shopping List"
+          to="/shoppinglist"
+          component={Link}
+        >
           {/* <NavLink to="/shoppinglist" /> */}
         </Tab>
-        <Tab label="Archive" to="/archive" component={Link}>
+        <Tab className="tab" label="Archive" to="/archive" component={Link}>
           {/* <NavLink to="/archive">Archive</NavLink> */}
         </Tab>
       </Tabs>

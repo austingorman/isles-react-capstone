@@ -51,7 +51,7 @@ export default class SwipeableTemporaryDrawer extends React.Component {
     // );
 
     return (
-      <div>
+      <React.Fragment>
         <Button className="navSwipe" onClick={this.toggleDrawer("left", true)}>
           <Icon>menu</Icon>
         </Button>
@@ -69,7 +69,7 @@ export default class SwipeableTemporaryDrawer extends React.Component {
             {sideList}
           </div>
         </SwipeableDrawer>
-      </div>
+      </React.Fragment>
     );
   }
 }
