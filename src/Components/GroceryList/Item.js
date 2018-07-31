@@ -18,7 +18,7 @@ export default class Item extends Component {
               <div className="inputForm">
                 <TextField
                   id="helperText"
-                  placeholder={this.props.item.quantity}
+                  value={this.props.item.quantity}
                   className="quantityForm"
                   name="editQuantity"
                   type="number"
@@ -27,7 +27,7 @@ export default class Item extends Component {
               <div className="inputForm">
                 <TextField
                   id="helperText"
-                  placeholder={this.props.item.name}
+                  value={this.props.item.name}
                   className="itemForm"
                   name="editItem"
                   type="text"
@@ -36,7 +36,7 @@ export default class Item extends Component {
               <div className="inputForm">
                 <TextField
                   id="helperText"
-                  placeholder={this.props.item.aisle}
+                  value={this.props.item.aisle}
                   className="aisleForm"
                   name="editAisle"
                   type="number"
