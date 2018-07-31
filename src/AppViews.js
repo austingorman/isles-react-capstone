@@ -32,7 +32,7 @@ export default class AppViews extends Component {
           }}
         />
         <Route
-          path="/mainlist"
+          path="/shoppinglist"
           render={state => {
             return (
               <ItemList

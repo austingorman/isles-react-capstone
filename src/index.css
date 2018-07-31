@@ -25,6 +25,7 @@ header {
   width: 100%;
   background-color: #0d47a1;
   padding: 8px;
+  display: block;
 }
 h5 {
   display: inline;
@@ -117,6 +118,14 @@ ul {
 } */
 .MuiIcon-root-28 {
   display: inline;
+}
+.navSwipe {
+  display: inline;
+}
+.sidebar {
+  display: block;
+  margin: 10px;
+  font-size: 20px;
 }
 .inputForm {
   /* display: inline; */

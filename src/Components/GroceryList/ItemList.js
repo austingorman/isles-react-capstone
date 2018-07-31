@@ -6,7 +6,7 @@ import Icon from "@material-ui/core/Icon";
 import TextField from "@material-ui/core/TextField";
 import Divider from "@material-ui/core/Divider";
 import Card from "@material-ui/core/Card";
-import Nav from "../../Nav";
+import HeaderAndNav from "../../HeaderAndNav";
 
 export default class ItemList extends Component {
   state = { toggleForms: "" };
@@ -112,10 +112,7 @@ export default class ItemList extends Component {
     return (
       <React.Fragment>
         <div>
-          <header>
-            <h1>isles</h1>
-          </header>
-          <Nav />
+          <HeaderAndNav />
 
           <Card>
             <div>

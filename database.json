@@ -11,7 +11,7 @@
       "quantity": "8",
       "name": "dog treats",
       "aisle": "9",
-      "archived": false,
+      "archived": true,
       "id": 2
     },
     {
@@ -25,14 +25,14 @@
       "quantity": "3",
       "name": "Bananas",
       "aisle": 10,
-      "archived": true,
+      "archived": false,
       "id": 8
     },
     {
       "quantity": "4",
       "name": "Canned Green Beans",
       "aisle": 7,
-      "archived": true,
+      "archived": false,
       "id": 9
     }
   ]
