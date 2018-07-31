@@ -5,6 +5,8 @@ import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 import TextField from "@material-ui/core/TextField";
 import Divider from "@material-ui/core/Divider";
+import Nav from "../../Nav";
+import Card from "@material-ui/core/Card";
 
 export default class ItemList extends Component {
   state = { toggleForms: "" };
@@ -112,19 +114,24 @@ export default class ItemList extends Component {
         <div>
           <header>
             <h1>isles</h1>
+            <Nav />
           </header>
-          <div>
-            <Button
-              variant="contained"
-              color="primary"
-              id="addItemButton"
-              onClick={this.formLauncher}
-            >
-              <Icon>add</Icon>
-              <h5>Add New Grocery Item</h5>
-            </Button>
+          <Card>
+            <div>
+              <Button
+                variant="contained"
+                color="primary"
+                id="addItemButton"
+                onClick={this.formLauncher}
+              >
+                <div id="plus">
+                  <Icon>add</Icon>
+                </div>
+                <h4>Add New Item</h4>
+              </Button>
+            </div>
             {this.state.toggleForms}
-          </div>
+          </Card>
           <ul id="groceryItemContainer">
             {this.props.item.map(item => (
               <Item

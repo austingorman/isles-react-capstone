@@ -9,8 +9,8 @@
   "items": [
     {
       "quantity": "8",
-      "name": "Bones For Doggos",
-      "aisle": 2,
+      "name": "dog treats",
+      "aisle": "9",
       "archived": false,
       "id": 2
     },
@@ -18,7 +18,7 @@
       "quantity": "6",
       "name": "chocolates",
       "aisle": 6,
-      "archived": true,
+      "archived": false,
       "id": 5
     },
     {
@@ -32,15 +32,8 @@
       "quantity": "4",
       "name": "Canned Green Beans",
       "aisle": 7,
-      "archived": false,
+      "archived": true,
       "id": 9
-    },
-    {
-      "quantity": "2",
-      "name": "bread",
-      "aisle": 25,
-      "archived": false,
-      "id": 10
     }
   ]
 }

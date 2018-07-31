@@ -28,7 +28,9 @@ export default class ArchivedList extends Component {
   render() {
     return (
       <ul className="archivedItems">
-        <h2>Archive</h2>
+        <div id="archiveHeader">
+          <h4>Archive</h4>
+        </div>
         {this.props.archivedItem.map(archivedItem => (
           <ArchivedItem
             key={archivedItem.id}

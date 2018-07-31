@@ -1,8 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #00e5ff;
+  background-color: #fff3e0;
   display: inline-block;
+  width: 100%;
 }
 * {
   margin: 0 auto;
@@ -10,40 +11,49 @@ body {
 }
 h1 {
   font-size: 55px;
-  margin: 0px 10px;
+  margin: 0px 13px;
+  color: #fff8e1;
+  display: inline;
+}
+h4 {
+  display: inline;
   color: white;
 }
 header {
-  display: block;
-  margin: 0px;
-  width: 360px;
-  background-color: #304ffe;
+  /* display: block; */
+  margin: 0 auto;
+  width: 100%;
+  background-color: #0d47a1;
+  padding: 8px;
 }
 h5 {
   display: inline;
-  color: white;
+  color: #0d47a1;
 }
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
+#plus {
+  display: inline;
+}
 #addItemButton {
   font-size: 15px;
   font-weight: bold;
-  margin: 8px auto;
+  margin: -8px 0 0 0;
+  padding: 15px;
   display: block;
-  background-color: sandybrown;
-  width: auto;
+  background-color: #80d8ff;
+  width: 100%;
 }
 #submitItemButton {
   font-size: 15px;
   /* font-weight: bold; */
   display: block;
-
   background-color: sandybrown;
   width: auto;
+  /* float: right; */
   margin: 8px auto;
 }
 #editSubmitItemButton {
@@ -69,15 +79,15 @@ ul {
   float: right;
   /* width: 30px; */
 }
-#groceryItemContainer {
-  /* display: inline-block; */
-  margin: 0px auto;
-}
-#groceryItems {
+/* #groceryItemContainer {
   display: inline-block;
+  margin: 0px auto;
+} */
+#groceryItems {
+  /* display: inline-block; */
   /* margin: 0 auto; */
-  background-color: #00e5ff;
-  width: 320px;
+  /* background-color: #00e5ff; */
+  width: auto;
 }
 #inputForms {
   margin: 0 auto;
@@ -87,6 +97,21 @@ ul {
 #editForms {
   margin: -1px auto;
   display: inline-block;
+}
+#login,
+#logout {
+  float: right;
+  margin: 13px;
+  display: inline;
+  color: white;
+}
+#helperText {
+  margin: auto;
+  width: auto;
+}
+#archiveHeader {
+  background-color: #0d47a1;
+  padding: 10px 8px 10px 5px;
 }
 /* .MuiButton-label-2 {
   width: auto !important;
