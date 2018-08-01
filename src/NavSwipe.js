@@ -1,12 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+// import PropTypes from "prop-types";
+// import { withStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import Icon from "@material-ui/core/Icon";
-
-import Divider from "@material-ui/core/Divider";
+// import Divider from "@material-ui/core/Divider";
 import Sidebar from "./Sidebar";
 // import { mailFolderListItems, otherMailFolderListItems } from "./tileData";
 
@@ -21,10 +20,7 @@ const styles = {
 
 export default class SwipeableTemporaryDrawer extends React.Component {
   state = {
-    top: false,
-    left: false,
-    bottom: false,
-    right: false
+    left: false
   };
 
   toggleDrawer = (side, open) => () => {
@@ -52,7 +48,7 @@ export default class SwipeableTemporaryDrawer extends React.Component {
 
     return (
       <React.Fragment>
-        <Button className="navSwipe" onClick={this.toggleDrawer("left", true)}>
+        <Button id="navSwipeButton" onClick={this.toggleDrawer("left", true)}>
           <Icon>menu</Icon>
         </Button>
         <SwipeableDrawer
@@ -74,6 +70,6 @@ export default class SwipeableTemporaryDrawer extends React.Component {
   }
 }
 
-SwipeableTemporaryDrawer.propTypes = {
-  classes: PropTypes.object.isRequired
-};
+// SwipeableTemporaryDrawer.propTypes = {
+//   classes: PropTypes.object.isRequired
+// };

@@ -26,9 +26,6 @@ export default class ArchivedItem extends Component {
         <li id="groceryItems">
           <Card>
             <Button
-              className="groceryItem"
-              variant="text"
-              color="primary"
               id="deleteButton"
               type="submit"
               onClick={() => this.deleteItem(this.props.archivedItem.id)}
@@ -40,7 +37,6 @@ export default class ArchivedItem extends Component {
             <h5 className="groceryItem">in aisle</h5>
             <h5 className="groceryItem">{this.props.archivedItem.aisle}</h5>
             <Button
-              className="groceryItem"
               id="editButton"
               type="submit"
               onClick={() => this.props.unarchiver(this.props.archivedItem.id)}

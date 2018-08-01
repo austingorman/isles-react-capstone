@@ -113,19 +113,15 @@ export default class ItemList extends Component {
       <React.Fragment>
         <div>
           <HeaderAndNav />
-
           <Card>
             <div>
               <Button
                 variant="contained"
-                color="primary"
                 id="addItemButton"
                 onClick={this.formLauncher}
               >
-                <div id="plus">
-                  <Icon>add</Icon>
-                </div>
-                <h4>Add New Item</h4>
+                <Icon id="plus">add</Icon>
+                {/* <h4>Add New Item</h4> */}
               </Button>
             </div>
             {this.state.toggleForms}

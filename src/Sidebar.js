@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { login, logout, isLoggedIn } from "./Components/Auth/AuthService";
+import Divider from "@material-ui/core/Divider";
 
 export default class Sidebar extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div id="navSwipeBar">
+        <Divider />
+
         {isLoggedIn() ? <Link to="/">Item List</Link> : ""}
         {isLoggedIn() ? (
           <button className="sidebar" onClick={() => logout()}>
@@ -17,7 +20,8 @@ export default class Sidebar extends Component {
           </button>
         )}
         <button className="sidebar">Stores</button>
-      </React.Fragment>
+        <Divider />
+      </div>
     );
   }
 }

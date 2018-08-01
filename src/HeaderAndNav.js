@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Nav from "./Nav";
 import NavSwipe from "./NavSwipe";
-
 // import SwipeViews from "./SwipeViews";
 
 export default class HeaderAndNav extends React.Component {
@@ -11,7 +10,7 @@ export default class HeaderAndNav extends React.Component {
         <div className="tabs">
           <header>
             <NavSwipe />
-            <h1>isles</h1>
+            <h1>Isles</h1>
           </header>
           <Nav />
         </div>

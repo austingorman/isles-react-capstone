@@ -12,6 +12,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-swipeable-views": "^0.12.15",
+    "typeface-norwester": "0.0.55",
     "typeface-roboto": "0.0.54"
   },
   "scripts": {

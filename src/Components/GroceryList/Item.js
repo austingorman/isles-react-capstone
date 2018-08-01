@@ -101,9 +101,8 @@ export default class Item extends Component {
             <h5 className="groceryItem">{this.props.item.aisle}</h5>
             <Button
               variant="text"
-              color="primary"
               id="editButton"
-              type="edit"
+              type="sumbit"
               onClick={this.formLauncher}
             >
               <Icon>edit</Icon>

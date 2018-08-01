@@ -18,7 +18,7 @@
       "quantity": "6",
       "name": "chocolates",
       "aisle": 6,
-      "archived": false,
+      "archived": true,
       "id": 5
     },
     {
