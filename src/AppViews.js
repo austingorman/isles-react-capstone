@@ -1,17 +1,24 @@
 import React, { Component } from "react";
+import StoreList from "./Components/Stores/StoreList";
 import ItemList from "./Components/GroceryList/ItemList";
 import ArchivedList from "./Components/Archived/ArchivedList";
 import APIManager from "./APIManager";
+import HeaderAndNav from "./HeaderAndNav";
 import Auth from "./Components/Auth/Auth";
 import { login, logout, isLoggedIn } from "./Components/Auth/AuthService";
 import { Route } from "react-router-dom";
 
 export default class AppViews extends Component {
-  state = { item: [], archivedItem: [] };
+  state = { store: [], item: [], archivedItem: [] };
 
   setItemState = () => {
     APIManager.getAll("items?_sort=aisle").then(items => {
       this.setState({ item: items, archivedItem: items });
+    });
+  };
+  setStoreState = () => {
+    APIManager.getAll("stores").then(stores => {
+      this.setState({ store: stores });
     });
   };
   render() {
@@ -19,6 +26,7 @@ export default class AppViews extends Component {
     // auth.login();
     return (
       <React.Fragment>
+        <HeaderAndNav setStoreState={this.setStoreState} />
         <Route
           exact
           path="/"

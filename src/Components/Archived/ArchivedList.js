@@ -29,7 +29,7 @@ export default class ArchivedList extends Component {
   render() {
     return (
       <React.Fragment>
-        <HeaderAndNav />
+        {/* <HeaderAndNav /> */}
         <ul className="archivedItems">
           {this.props.archivedItem.map(archivedItem => (
             <ArchivedItem
