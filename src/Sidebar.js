@@ -20,7 +20,10 @@ export default class Sidebar extends Component {
             Log In
           </button>
         )}
-        <StoreList setStoreState={this.props.setStoreState} />
+        <StoreList
+          setStoreState={this.props.setStoreState}
+          toggleDrawer={this.props.toggleDrawer}
+        />
         <Divider />
       </div>
     );

@@ -34,7 +34,10 @@ export default class SwipeableTemporaryDrawer extends React.Component {
 
     const sideList = (
       <div>
-        <Sidebar setStoreState={this.props.setStoreState} />
+        <Sidebar
+          setStoreState={this.props.setStoreState}
+          toggleDrawer={this.toggleDrawer}
+        />
       </div>
     );
 
@@ -51,9 +54,9 @@ export default class SwipeableTemporaryDrawer extends React.Component {
           <div
             id="drawer"
             tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer("left", false)}
-            onKeyDown={this.toggleDrawer("left", false)}
+            // role="button"
+            // onClick={this.toggleDrawer("left", false)}
+            // onKeyDown={this.toggleDrawer("left", false)}
           >
             {sideList}
           </div>
