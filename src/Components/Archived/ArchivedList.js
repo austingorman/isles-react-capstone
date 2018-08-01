@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ArchivedItem from "../Archived/ArchivedItem";
 import APIManager from "../../APIManager";
 import Button from "@material-ui/core/Button";
+import HeaderAndNav from "../../HeaderAndNav";
 
 export default class ArchivedList extends Component {
   componentDidMount() {
@@ -27,17 +28,19 @@ export default class ArchivedList extends Component {
 
   render() {
     return (
-      <ul className="archivedItems">
-        <h2>Archive</h2>
-        {this.props.archivedItem.map(archivedItem => (
-          <ArchivedItem
-            key={archivedItem.id}
-            archivedItem={archivedItem}
-            unarchiver={this.unarchiver}
-            setTheState={this.props.setTheState}
-          />
-        ))}
-      </ul>
+      <React.Fragment>
+        <HeaderAndNav />
+        <ul className="archivedItems">
+          {this.props.archivedItem.map(archivedItem => (
+            <ArchivedItem
+              key={archivedItem.id}
+              archivedItem={archivedItem}
+              unarchiver={this.unarchiver}
+              setTheState={this.props.setTheState}
+            />
+          ))}
+        </ul>
+      </React.Fragment>
     );
   }
 }

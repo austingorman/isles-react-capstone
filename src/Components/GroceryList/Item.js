@@ -12,16 +12,13 @@ export default class Item extends Component {
   formLauncher = () => {
     if (this.state.toggleEditForms === "") {
       this.setState({
-        // <form onSubmit={this.editItem}>
         toggleEditForms: (
           <form onSubmit={this.editItem}>
             <div id="inputForms">
               <div className="inputForm">
                 <TextField
-                  label="Quantity"
-                  // className={classes.textField}
-                  // helperText="Quantity"
-                  // margin="normal"
+                  id="helperText"
+                  value={this.props.item.quantity}
                   className="quantityForm"
                   name="editQuantity"
                   type="number"
@@ -29,8 +26,8 @@ export default class Item extends Component {
               </div>
               <div className="inputForm">
                 <TextField
-                  label="Item Name"
-                  // defaultValue="Default Value"
+                  id="helperText"
+                  value={this.props.item.name}
                   className="itemForm"
                   name="editItem"
                   type="text"
@@ -38,24 +35,22 @@ export default class Item extends Component {
               </div>
               <div className="inputForm">
                 <TextField
-                  label="Aisle"
-                  defaultValue="Default Value"
+                  id="helperText"
+                  value={this.props.item.aisle}
                   className="aisleForm"
                   name="editAisle"
                   type="number"
                 />
               </div>
             </div>
-            <div className="inputForms">
-              <Button
-                variant="contained"
-                color="primary"
-                id="editSubmitItemButton"
-                type="submit"
-              >
-                Submit
-              </Button>
-            </div>
+            <Button
+              variant="contained"
+              color="primary"
+              id="submitItemButton"
+              type="submit"
+            >
+              Submit
+            </Button>
           </form>
         )
       });
@@ -93,27 +88,27 @@ export default class Item extends Component {
     if (this.props.item.archived === false) {
       return (
         <li id="groceryItems">
-          <Checkbox
-            className="checkBox"
-            type="checkbox"
-            checked={this.props.item.archived}
-            onChange={() => this.props.archiver(this.props.item.id)}
-          />
-          <h5 className="groceryItem">{this.props.item.quantity}</h5>
-          <h5 className="groceryItem">{this.props.item.name}</h5>
-          <h5 className="groceryItem">in aisle</h5>
-          <h5 className="groceryItem">{this.props.item.aisle}</h5>
-
-          <Button
-            variant="text"
-            color="primary"
-            id="editButton"
-            type="edit"
-            onClick={this.formLauncher}
-          >
-            <Icon>edit</Icon>
-          </Button>
-          {this.state.toggleEditForms}
+          <Card>
+            <Checkbox
+              className="checkBox"
+              type="checkbox"
+              checked={this.props.item.archived}
+              onChange={() => this.props.archiver(this.props.item.id)}
+            />
+            <h5 className="groceryItem">{this.props.item.quantity}</h5>
+            <h5 className="groceryItem">{this.props.item.name}</h5>
+            <h5 className="groceryItem">in aisle</h5>
+            <h5 className="groceryItem">{this.props.item.aisle}</h5>
+            <Button
+              variant="text"
+              id="editButton"
+              type="sumbit"
+              onClick={this.formLauncher}
+            >
+              <Icon>edit</Icon>
+            </Button>
+            {this.state.toggleEditForms}
+          </Card>
         </li>
       );
     } else {

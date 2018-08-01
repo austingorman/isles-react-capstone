@@ -1,49 +1,72 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #00e5ff;
+  background-color: #fff3e0;
   display: inline-block;
+  width: 100vw;
 }
 * {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   font-family: "Roboto";
 }
-h1 {
-  font-size: 55px;
-  margin: 0px 10px;
-  color: white;
-}
 header {
+  /* display: block; */
+  margin: 0 auto;
+  width: 100vw;
+  background-color: #0d47a1;
+  padding: 3vw 0 0 0;
   display: block;
-  margin: 0px;
-  width: 360px;
-  background-color: #304ffe;
+}
+h1 {
+  font-size: 35px;
+  color: #fff8e1;
+  display: inline;
+  font-family: "Cabin", sans-serif;
+}
+h4 {
+  display: inline-block;
+  color: white;
 }
 h5 {
+  padding: 15px 0 0 0;
   display: inline;
-  color: white;
+  color: #0d47a1;
 }
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
+#navSwipeButton {
+  color: white;
+  margin: 0 0 7px 0;
+  display: inline-block;
+}
+#navSwipeBar {
+  margin: 7vw;
+}
+#plus {
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  top: 2px;
+}
 #addItemButton {
   font-size: 15px;
+  width: 100vw;
   font-weight: bold;
-  margin: 8px auto;
+  margin: -8px 0 -8px 0;
   display: block;
-  background-color: sandybrown;
-  width: auto;
+  background-color: #80d8ff;
 }
 #submitItemButton {
   font-size: 15px;
   /* font-weight: bold; */
   display: block;
-
   background-color: sandybrown;
   width: auto;
+  /* float: right; */
   margin: 8px auto;
 }
 #editSubmitItemButton {
@@ -54,30 +77,26 @@ ul {
   width: auto;
 }
 #deleteButton {
-  /* background-color: sandybrown; */
   display: inline;
-  margin: 0 -10px 0 -10px;
-  padding: 8px 0px;
+  position: relative;
+  top: 3.5px;
+
+  /* padding: 8px 0px; */
   float: left;
   width: 10px;
 }
 #editButton {
   /* background-color: sandybrown; */
   display: inline;
-  margin: 0 -10px 0 0px;
+  margin: 10px 0 -10px 0;
   padding: 0;
   float: right;
   /* width: 30px; */
 }
-#groceryItemContainer {
-  /* display: inline-block; */
-  margin: 0px auto;
-}
 #groceryItems {
   display: inline-block;
-  /* margin: 0 auto; */
-  background-color: #00e5ff;
-  width: 320px;
+  width: 102vw;
+  margin: 0 -3px;
 }
 #inputForms {
   margin: 0 auto;
@@ -88,11 +107,54 @@ ul {
   margin: -1px auto;
   display: inline-block;
 }
-/* .MuiButton-label-2 {
-  width: auto !important;
-} */
-.MuiIcon-root-28 {
+#helperText {
+  margin: auto;
+  width: auto;
+}
+
+.tab {
+  background-color: #0d47a1;
+  color: white;
   display: inline;
+  width: 50vw;
+  margin: -20px;
+}
+.MuiPaper-root-80,
+.MuiPaper-elevation1-83,
+.MuiPaper-rounded-81,
+.MuiCard-root-79 {
+  height: 50px;
+  margin: -200vw 0;
+}
+.tabs {
+  background-color: #0d47a1;
+  padding: 0 0 0 -20px;
+}
+.MuiPaper-rounded-78 {
+  border-radius: 0px;
+}
+.MuiIcon-label-2 {
+  display: inline;
+  width: 100vw;
+}
+.MuiTab-wrapper-28 {
+  color: white;
+  width: 100vw;
+  margin: -20px 0 0 28px;
+}
+.MuiTab-wrapper-72 {
+  color: white;
+  width: 100vw;
+  margin: -10px 0 0 0;
+}
+.navSwipe {
+  display: inline;
+  margin: 70% 0;
+}
+.sidebar {
+  display: block;
+  margin: 10px;
+  font-size: 20px;
 }
 .inputForm {
   /* display: inline; */
@@ -107,11 +169,11 @@ ul {
 }
 .itemForm {
   display: inline;
-  margin: 0 auto;
+  margin: 100vw;
   width: auto;
 }
 .groceryItem {
-  display: inline;
+  display: inline-block;
   margin: 0px 1px 5px 1px;
   /* width: 300px; */
 }

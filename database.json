@@ -9,9 +9,9 @@
   "items": [
     {
       "quantity": "8",
-      "name": "Bones For Doggos",
-      "aisle": 2,
-      "archived": false,
+      "name": "dog treats",
+      "aisle": "9",
+      "archived": true,
       "id": 2
     },
     {
@@ -36,9 +36,9 @@
       "id": 9
     },
     {
-      "quantity": "2",
-      "name": "bread",
-      "aisle": 25,
+      "quantity": "7",
+      "name": "Strawberry Jam",
+      "aisle": 11,
       "archived": false,
       "id": 10
     }
