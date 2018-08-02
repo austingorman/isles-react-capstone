@@ -8,8 +8,6 @@ export default class Sidebar extends Component {
   render() {
     return (
       <div id="navSwipeBar">
-        <Divider />
-
         {isLoggedIn() ? <Link to="/">Item List</Link> : ""}
         {isLoggedIn() ? (
           <button className="sidebar" onClick={() => logout()}>
@@ -23,8 +21,13 @@ export default class Sidebar extends Component {
         <StoreList
           setStoreState={this.props.setStoreState}
           toggleDrawer={this.props.toggleDrawer}
+          store={this.props.store}
+          user={this.props.user}
+          setTheState={this.props.setItemState}
+          archivedItem={this.props.archivedItem}
+          item={this.props.item}
+          changeStores={this.props.changeStores}
         />
-        <Divider />
       </div>
     );
   }

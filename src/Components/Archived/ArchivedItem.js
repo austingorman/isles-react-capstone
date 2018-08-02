@@ -5,11 +5,11 @@ import Icon from "@material-ui/core/Icon";
 import Card from "@material-ui/core/Card";
 
 export default class ArchivedItem extends Component {
-  deleteItem = id => {
-    APIManager.deleteItem(id)
+  deleter = (deleter, id) => {
+    APIManager.deleter(deleter, id)
       .then(() => {
         // Remember you HAVE TO return this fetch to the subsequenet `then()`
-        return fetch("http://localhost:5002/items");
+        return fetch(`http://localhost:5002/${deleter}`);
       })
       // Once the new array of animals is retrieved, set the state
       .then(a => a.json())
@@ -28,7 +28,7 @@ export default class ArchivedItem extends Component {
             <Button
               id="deleteButton"
               type="submit"
-              onClick={() => this.deleteItem(this.props.archivedItem.id)}
+              onClick={() => this.deleter("items", this.props.archivedItem.id)}
             >
               <Icon>delete_forever</Icon>
             </Button>

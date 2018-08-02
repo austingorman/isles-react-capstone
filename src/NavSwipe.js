@@ -37,10 +37,15 @@ export default class SwipeableTemporaryDrawer extends React.Component {
         <Sidebar
           setStoreState={this.props.setStoreState}
           toggleDrawer={this.toggleDrawer}
+          store={this.props.store}
+          user={this.props.user}
+          setTheState={this.props.setItemState}
+          archivedItem={this.props.archivedItem}
+          item={this.props.item}
+          changeStores={this.props.changeStores}
         />
       </div>
     );
-
     return (
       <React.Fragment>
         <Button id="navSwipeButton" onClick={this.toggleDrawer("left", true)}>
