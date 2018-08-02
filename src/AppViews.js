@@ -11,8 +11,10 @@ import { Route } from "react-router-dom";
 export default class AppViews extends Component {
   state = {
     itemDisplay: "store",
+    archiveDisplay: "store",
     store: [],
     selectedStore: "",
+    archivedItem: [],
     item: [],
     user: []
   };
@@ -95,7 +97,7 @@ export default class AppViews extends Component {
               <ArchivedList
                 setTheState={this.setItemState}
                 archivedItem={this.state.archivedItem}
-                store={this.state.store}
+                selectedStore={this.state.selectedStore}
               />
             );
           }}

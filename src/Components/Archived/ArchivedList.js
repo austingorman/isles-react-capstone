@@ -5,8 +5,27 @@ import Button from "@material-ui/core/Button";
 import HeaderAndNav from "../../HeaderAndNav";
 
 export default class ArchivedList extends Component {
+  state = { archivedDisplay: [] };
+
+  getAllStoreItems = () => {
+    let store = this.props.selectedStore;
+    APIManager.getStore(store).then(response => {
+      console.log(response);
+      this.setState({
+        archivedDisplay: response
+      });
+    });
+  };
+
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    if (this.props.selectedStore !== prevProps.selectedStore) {
+      this.getAllStoreItems();
+    }
+  }
+
   componentDidMount() {
-    this.props.setTheState();
+    this.getAllStoreItems();
   }
 
   unarchiver = itemId => {
@@ -31,7 +50,7 @@ export default class ArchivedList extends Component {
       <React.Fragment>
         {/* <HeaderAndNav /> */}
         <ul className="archivedItems">
-          {this.props.archivedItem.map(archivedItem => (
+          {this.state.archivedDisplay.map(archivedItem => (
             <ArchivedItem
               key={archivedItem.id}
               archivedItem={archivedItem}

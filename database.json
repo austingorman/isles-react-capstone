@@ -8,46 +8,38 @@
   ],
   "stores": [
     {
-      "name": "Kroger",
-      "id": 3
-    },
-    {
       "name": "Piggly Wiggly",
       "id": 4
+    },
+    {
+      "name": "Kroger",
+      "id": 5
     }
   ],
   "items": [
     {
       "quantity": "1",
-      "name": "asdfsda",
+      "name": "La Croix",
       "aisle": 3,
       "archived": false,
       "storeId": "4",
       "id": 1
     },
     {
-      "quantity": "300",
-      "name": "La Croix",
-      "aisle": 8,
-      "archived": false,
+      "quantity": "2",
+      "name": "Dog Treats",
+      "aisle": 5,
+      "archived": true,
       "storeId": "4",
       "id": 2
     },
     {
-      "quantity": "9",
-      "name": "Hams",
-      "aisle": 8,
+      "quantity": "300",
+      "name": "Dog bones",
+      "aisle": 9,
       "archived": false,
       "storeId": "4",
       "id": 3
-    },
-    {
-      "quantity": "8",
-      "name": "Dog Treats",
-      "aisle": 4,
-      "archived": true,
-      "storeId": "3",
-      "id": 4
     }
   ]
 }

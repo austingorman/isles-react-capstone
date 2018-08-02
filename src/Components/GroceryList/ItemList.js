@@ -90,7 +90,7 @@ export default class ItemList extends Component {
     const Aisle = parseInt(event.target.aisle.value, 10);
     const StoreId = this.props.selectedStore;
     // const StoreUserId = this.props.item.userId;
-    APIManager.postItem(Quantity, ItemName, Aisle, false, StoreId)
+    APIManager.postItem(Quantity, ItemName, Aisle, false, String(StoreId))
       .then(() => {
         return fetch(`http://localhost:5002/items/`);
       })
@@ -113,7 +113,7 @@ export default class ItemList extends Component {
       })
       .then(a => a.json())
       .then(() => {
-        APIManager.getAll("items").then(items =>
+        APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
           this.props.setTheState({
             item: items,
             archivedItem: items
@@ -144,8 +144,9 @@ export default class ItemList extends Component {
               <Item
                 key={item.id}
                 item={item}
+                itemsDisplay={this.itemsDisplay}
                 archiver={this.archiver}
-                // setTheState={this.props.setTheState}
+                // setTheState={this..setTheState}
               />
             ))}
           </ul>

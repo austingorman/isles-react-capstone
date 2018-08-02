@@ -18,7 +18,7 @@ export default class HeaderAndNav extends React.Component {
               item={this.props.item}
               changeStores={this.props.changeStores}
             />
-            <h1>Isles</h1>
+            <h1>isles</h1>
           </header>
           <Nav />
         </div>
