@@ -15,15 +15,15 @@ export default class ArchivedList extends Component {
       .then(() => {
         return fetch("http://localhost:5002/items");
       })
-      .then(a => a.json())
-      .then(() => {
-        APIManager.getAll("items").then(items =>
-          this.props.setTheState({
-            items: items,
-            archivedItem: items
-          })
-        );
-      });
+      .then(a => a.json());
+    // .then(() => {
+    //   APIManager.getAll("items").then(items =>
+    //     this.props.setTheState({
+    //       items: items,
+    //       archivedItem: items
+    //     })
+    //   );
+    // });
   };
 
   render() {

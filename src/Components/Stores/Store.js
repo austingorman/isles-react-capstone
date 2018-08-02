@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import APIManager from "../../APIManager";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
+import { Redirect } from "react-router-dom";
 
 export default class Store extends Component {
   deleter = (deleter, id) => {
@@ -33,7 +34,9 @@ export default class Store extends Component {
           <div>
             <Button
               className="stores"
-              onClick={() => this.props.changeStores(this.props.store.id)}
+              onClick={() => {
+                this.props.changeStores(this.props.store.id);
+              }}
             >
               <h3>{this.props.store.name}</h3>
             </Button>

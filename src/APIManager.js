@@ -12,7 +12,7 @@ const APIManager = Object.create(
       value: storeId => {
         return fetch(
           `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=desc`
-        );
+        ).then(e => e.json());
       }
     },
     deleter: {

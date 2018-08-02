@@ -9,7 +9,13 @@ import { login, logout, isLoggedIn } from "./Components/Auth/AuthService";
 import { Route } from "react-router-dom";
 
 export default class AppViews extends Component {
-  state = { store: [], item: [], archivedItem: [], user: [] };
+  state = {
+    itemDisplay: "store",
+    store: [],
+    selectedStore: "",
+    item: [],
+    user: []
+  };
 
   setItemState = () => {
     APIManager.getAll("items?_sort=aisle").then(items => {
@@ -26,22 +32,22 @@ export default class AppViews extends Component {
   };
 
   changeStores = storeId => {
-    // event.preventDefault();
+    // / event.preventDefault();
     console.log(storeId);
-    APIManager.getStore(storeId)
-      .then(() => {
-        return fetch(
-          `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=desc`
-        );
-      })
-      .then(a => a.json())
-      .then(() => {
-        items =>
-          this.props.setTheState({
-            items: items,
-            archivedItem: items
-          });
-      });
+    this.setState({ itemDisplay: "store", selectedStore: storeId });
+    // APIManager.getStore(storeId)
+    //   .then(() => {
+    //     return fetch(
+    //       `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=desc`
+    //     );
+    //   })
+    //   .then(a => a.json())
+    //   .then(items =>
+    //     this.setState({
+    //       items: items,
+    //       archivedItem: items
+    //     })
+    //   );
   };
   render() {
     // const auth = new Auth();
@@ -76,7 +82,8 @@ export default class AppViews extends Component {
               <ItemList
                 setTheState={this.setItemState}
                 item={this.state.item}
-                store={this.state.store}
+                selectedStore={this.state.selectedStore}
+                itemDisplay={this.state.itemDisplay}
               />
             );
           }}
