@@ -6,6 +6,11 @@
       "password": "password"
     }
   ],
+  "stores": [
+    {
+      "name": "Publix"
+    }
+  ],
   "items": [
     {
       "quantity": "8",

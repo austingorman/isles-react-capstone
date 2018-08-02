@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { login, logout, isLoggedIn } from "./Components/Auth/AuthService";
 import Divider from "@material-ui/core/Divider";
+import StoreList from "./Components/Stores/StoreList";
 
 export default class Sidebar extends Component {
   render() {
@@ -19,7 +20,10 @@ export default class Sidebar extends Component {
             Log In
           </button>
         )}
-        <button className="sidebar">Stores</button>
+        <StoreList
+          setStoreState={this.props.setStoreState}
+          toggleDrawer={this.props.toggleDrawer}
+        />
         <Divider />
       </div>
     );

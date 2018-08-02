@@ -111,7 +111,7 @@ export default class ItemList extends Component {
     return (
       <React.Fragment>
         <div>
-          <HeaderAndNav />
+          {/* <HeaderAndNav /> */}
           <Card>
             <div>
               <Button

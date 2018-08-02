@@ -9,7 +9,7 @@ export default class HeaderAndNav extends React.Component {
       <React.Fragment>
         <div className="tabs">
           <header>
-            <NavSwipe />
+            <NavSwipe setStoreState={this.props.setStoreState} />
             <h1>Isles</h1>
           </header>
           <Nav />
