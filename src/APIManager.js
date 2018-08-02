@@ -8,9 +8,16 @@ const APIManager = Object.create(
         );
       }
     },
-    deleteItem: {
-      value: itemId => {
-        return fetch(`http://localhost:5002/items/${itemId}`, {
+    getStore: {
+      value: storeId => {
+        return fetch(
+          `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=desc`
+        );
+      }
+    },
+    deleter: {
+      value: (deleter, itemId) => {
+        return fetch(`http://localhost:5002/${deleter}/${itemId}`, {
           method: "DELETE"
         });
       }
@@ -29,19 +36,24 @@ const APIManager = Object.create(
       }
     },
     postItem: {
-      value: (quantity, itemName, aisle, archived) => {
-        return fetch(`http://localhost:5002/items`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            quantity: quantity,
-            name: itemName,
-            aisle: aisle,
-            archived: archived
-          })
-        });
+      value: (quantity, itemName, aisle, archived, storeId, userId) => {
+        return fetch(
+          `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=desc`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              quantity: quantity,
+              name: itemName,
+              aisle: aisle,
+              archived: archived,
+              storeId: storeId,
+              userId: userId
+            })
+          }
+        );
       }
     },
     patchItem: {

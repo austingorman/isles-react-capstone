@@ -8,44 +8,61 @@
   ],
   "stores": [
     {
-      "name": "Publix"
+      "name": "Publix",
+      "id": 1
+    },
+    {
+      "name": "Kroger",
+      "id": 3
     }
   ],
   "items": [
     {
-      "quantity": "8",
-      "name": "dog treats",
-      "aisle": "9",
-      "archived": true,
-      "id": 2
-    },
-    {
-      "quantity": "6",
-      "name": "chocolates",
-      "aisle": 6,
-      "archived": true,
-      "id": 5
+      "quantity": "1",
+      "name": "Canned Green Beans",
+      "aisle": 5,
+      "archived": false,
+      "id": 1,
+      "storeId": 1
     },
     {
       "quantity": "3",
-      "name": "Bananas",
+      "name": "Dog Treats",
+      "aisle": 9,
+      "archived": false,
+      "id": 2,
+      "storeId": 1
+    },
+    {
+      "quantity": "3",
+      "name": "Hams",
       "aisle": 10,
       "archived": false,
-      "id": 8
+      "id": 3,
+      "storeId": 1
     },
     {
-      "quantity": "4",
-      "name": "Canned Green Beans",
-      "aisle": 7,
-      "archived": true,
-      "id": 9
-    },
-    {
-      "quantity": "7",
-      "name": "Strawberry Jam",
-      "aisle": 11,
+      "quantity": "8",
+      "name": "Hams",
+      "aisle": 8,
       "archived": false,
-      "id": 10
+      "id": 4,
+      "storeId": 1
+    },
+    {
+      "quantity": "1",
+      "name": "Strawberrys",
+      "aisle": 16,
+      "archived": false,
+      "id": 5,
+      "storeId": 1
+    },
+    {
+      "quantity": "2",
+      "name": "La Croix",
+      "aisle": 3,
+      "archived": false,
+      "id": 6
     }
   ]
 }

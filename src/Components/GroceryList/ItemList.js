@@ -74,10 +74,12 @@ export default class ItemList extends Component {
     const Quantity = event.target.quantity.value;
     const ItemName = event.target.item.value;
     const Aisle = parseInt(event.target.aisle.value, 10);
+    const StoreId = this.props.store.id;
+    // const StoreUserId = this.props.item.userId;
 
-    APIManager.postItem(Quantity, ItemName, Aisle, false)
+    APIManager.postItem(Quantity, ItemName, Aisle, false, StoreId)
       .then(() => {
-        return fetch("http://localhost:5002/items");
+        return fetch(`http://localhost:5002/items/`);
       })
       .then(a => a.json())
       .then(() => {
@@ -111,7 +113,6 @@ export default class ItemList extends Component {
     return (
       <React.Fragment>
         <div>
-          {/* <HeaderAndNav /> */}
           <Card>
             <div>
               <Button
@@ -125,7 +126,7 @@ export default class ItemList extends Component {
             </div>
             {this.state.toggleForms}
           </Card>
-          <ul id="groceryItemContainer">
+          <ul>
             {this.props.item.map(item => (
               <Item
                 key={item.id}
@@ -140,3 +141,29 @@ export default class ItemList extends Component {
     );
   }
 }
+
+// addNewItem = event => {
+//   event.preventDefault();
+//   const Quantity = event.target.quantity.value;
+//   const ItemName = event.target.item.value;
+//   const Aisle = parseInt(event.target.aisle.value, 10);
+//   const StoreId = this.props.store.storeid;
+//   const StoreUserId = this.props.store.userID;
+
+//   APIManager.postItem(Quantity, ItemName, Aisle, false, StoreId, StoreUserId)
+//     .then(() => {
+//       return fetch(`http://localhost:5002/items/`);
+//     })
+//     .then(a => a.json())
+//     .then(() => {
+//       APIManager.getAll(
+//         `items?_sort=aisle&_order=ascitems_storeId=${StoreId}"`.then(items =>
+//           this.props.setTheState({
+//             item: items,
+//             archivedItem: items
+//           })
+//         )
+//       );
+//     })
+//     .then(this.setState({ toggleForms: "" }));
+// };

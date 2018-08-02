@@ -51,7 +51,8 @@ ul {
 }
 
 #navSwipeBar {
-  margin: 7vw;
+  margin: 20px 50px;
+  display: inline-block;
 }
 
 #plus {
@@ -136,6 +137,11 @@ ul {
   /* margin: 0 3.5vw; */
   display: inline;
 }
+#stores {
+  display: inline-block;
+  width: 50vw;
+  /* margin: -5px -3px 0px -3px; */
+}
 .tab {
   background-color: #0d47a1;
   color: white;
@@ -144,6 +150,9 @@ ul {
   margin: -20px;
 }
 
+.MuiButtonBase-root-25 .MuiButton-root-1 .MuiButton-text-3 .MuiButton-flat-6 {
+  margin: 0 auto;
+}
 .MuiPaper-root-80,
 .MuiPaper-elevation1-83,
 .MuiPaper-rounded-81,
@@ -155,7 +164,9 @@ ul {
 /* .MuiPaper-root-80 .MuiPaper-elevation16-98 .MuiDrawer-paper-43 .MuiDrawer-paperAnchorLeft-44 {
   margin: 50px 0 0 0;
 } */
-
+.stores {
+  color: #0d47a1;
+}
 .tabs {
   background-color: #0d47a1;
   padding: 0 0 0 -20px;
@@ -189,7 +200,7 @@ ul {
 
 .sidebar {
   display: block;
-  margin: 10px;
+  margin: 10px auto;
   font-size: 20px;
 }
 

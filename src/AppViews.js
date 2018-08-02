@@ -9,11 +9,14 @@ import { login, logout, isLoggedIn } from "./Components/Auth/AuthService";
 import { Route } from "react-router-dom";
 
 export default class AppViews extends Component {
-  state = { store: [], item: [], archivedItem: [] };
+  state = { store: [], item: [], archivedItem: [], user: [] };
 
   setItemState = () => {
     APIManager.getAll("items?_sort=aisle").then(items => {
-      this.setState({ item: items, archivedItem: items });
+      this.setState({
+        item: items,
+        archivedItem: items
+      });
     });
   };
   setStoreState = () => {
@@ -21,12 +24,38 @@ export default class AppViews extends Component {
       this.setState({ store: stores });
     });
   };
+
+  changeStores = storeId => {
+    // event.preventDefault();
+    console.log(storeId);
+    APIManager.getStore(storeId)
+      .then(() => {
+        return fetch(
+          `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=desc`
+        );
+      })
+      .then(a => a.json())
+      .then(() => {
+        items =>
+          this.props.setTheState({
+            items: items,
+            archivedItem: items
+          });
+      });
+  };
   render() {
     // const auth = new Auth();
     // auth.login();
     return (
       <React.Fragment>
-        <HeaderAndNav setStoreState={this.setStoreState} />
+        <HeaderAndNav
+          setStoreState={this.setStoreState}
+          setTheState={this.setItemState}
+          archivedItem={this.state.archivedItem}
+          store={this.state.store}
+          item={this.state.item}
+          changeStores={this.changeStores}
+        />
         <Route
           exact
           path="/"
@@ -35,6 +64,7 @@ export default class AppViews extends Component {
               <ItemList
                 setTheState={this.setItemState}
                 item={this.state.item}
+                store={this.state.store}
               />
             );
           }}
@@ -46,6 +76,7 @@ export default class AppViews extends Component {
               <ItemList
                 setTheState={this.setItemState}
                 item={this.state.item}
+                store={this.state.store}
               />
             );
           }}
@@ -57,6 +88,7 @@ export default class AppViews extends Component {
               <ArchivedList
                 setTheState={this.setItemState}
                 archivedItem={this.state.archivedItem}
+                store={this.state.store}
               />
             );
           }}
