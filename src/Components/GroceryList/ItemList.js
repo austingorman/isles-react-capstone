@@ -105,18 +105,10 @@ export default class ItemList extends Component {
 
   archiver = itemId => {
     // event.preventDefault();
-    APIManager.patchItem(itemId, true)
-      .then(() => {
-        return fetch("http://localhost:5002/items");
-      })
-      .then(() => {
-        APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
-          this.props.setTheState({
-            item: items,
-            archivedItem: items
-          })
-        );
-      });
+    APIManager.patchItem(itemId, true).then(() => {
+      // this.props.setTheState();
+      this.getAllStoreItems();
+    });
   };
 
   render() {

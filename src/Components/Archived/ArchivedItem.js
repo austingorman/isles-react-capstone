@@ -21,7 +21,6 @@ export default class ArchivedItem extends Component {
   };
 
   render() {
-    console.log(this.props.archivedItem);
     if (this.props.archivedItem.archived === true) {
       return (
         <li id="groceryItems">

@@ -29,18 +29,12 @@ export default class ArchivedList extends Component {
 
   unarchiver = itemId => {
     // event.preventDefault();
-    APIManager.patchItem(itemId, false)
-      // .then(() => {
-      //   return fetch("http://localhost:5002/items");
-      // })
-      .then(() => {
-        APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
-          this.props.setTheState({
-            item: items
-          })
-        );
-      });
+    APIManager.patchItem(itemId, false).then(() => {
+      // this.props.setTheState();
+      this.getAllStoreItems();
+    });
   };
+
   render() {
     return (
       <React.Fragment>

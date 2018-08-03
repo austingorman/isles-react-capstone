@@ -20,7 +20,9 @@ export default class AppViews extends Component {
 
   setItemState = () => {
     APIManager.getAll("items?_sort=aisle&_order=asc").then(items => {
-      this.setState({ item: items, archivedItem: items });
+      console.log(items, "items");
+
+      this.setState({ item: items });
     });
   };
   setStoreState = () => {

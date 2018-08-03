@@ -47,9 +47,9 @@
     },
     {
       "quantity": "1",
-      "name": "D",
-      "aisle": null,
-      "archived": false,
+      "name": "bag of coffee",
+      "aisle": "8",
+      "archived": true,
       "storeId": "4",
       "id": 7
     },
@@ -70,9 +70,9 @@
       "id": 9
     },
     {
-      "quantity": "6",
-      "name": "lacroix",
-      "aisle": 9,
+      "quantity": "2",
+      "name": "La Croix",
+      "aisle": 8,
       "archived": false,
       "storeId": "4",
       "id": 10
