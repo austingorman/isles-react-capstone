@@ -7,7 +7,46 @@ import Card from "@material-ui/core/Card";
 import TextField from "@material-ui/core/TextField";
 
 export default class Item extends Component {
-  state = { toggleEditForms: [] };
+  state = {
+    toggleEditForms: [],
+    quantity: this.props.item.quantity,
+    name: this.props.item.name,
+    aisle: this.props.item.aisle
+  };
+  // Update state whenever an input field is edited
+  handleFieldChange = evt => {
+    const stateToChange = { ...this.state };
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+    console.log(stateToChange);
+    console.log(this.state);
+  };
+
+  editItem = e => {
+    e.preventDefault();
+
+    const updatedItem = {
+      quantity: this.state.quantity,
+      name: this.state.name,
+      aisle: this.state.aisle,
+      storeId: this.props.storeId
+    };
+    console.log(this.props, updatedItem);
+    APIManager.editItems(this.props.item.id, updatedItem)
+      .then(a => a.json())
+      .then(() => {
+        APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
+          this.props.setTheState({
+            item: items
+          })
+        );
+      })
+      .then(
+        this.setState({
+          toggleEditForms: ""
+        })
+      );
+  };
 
   formLauncher = () => {
     if (this.state.toggleEditForms === "") {
@@ -17,8 +56,9 @@ export default class Item extends Component {
             <div id="inputForms">
               <div className="inputForm">
                 <TextField
-                  id="helperText"
-                  value={this.props.item.quantity}
+                  id="quantity"
+                  defaultValue={this.state.quantity}
+                  onChange={this.handleFieldChange}
                   className="quantityForm"
                   name="editQuantity"
                   type="number"
@@ -26,8 +66,10 @@ export default class Item extends Component {
               </div>
               <div className="inputForm">
                 <TextField
-                  id="helperText"
-                  value={this.props.item.name}
+                  id="name"
+                  defaultValue={this.state.name}
+                  // defaultValue={this.state.name}
+                  onChange={this.handleFieldChange}
                   className="itemForm"
                   name="editItem"
                   type="text"
@@ -35,8 +77,9 @@ export default class Item extends Component {
               </div>
               <div className="inputForm">
                 <TextField
-                  id="helperText"
-                  value={this.props.item.aisle}
+                  id="aisle"
+                  defaultValue={this.state.aisle}
+                  onChange={this.handleFieldChange}
                   className="aisleForm"
                   name="editAisle"
                   type="number"
@@ -59,30 +102,31 @@ export default class Item extends Component {
     }
   };
 
-  editItem = event => {
-    event.preventDefault();
-    const ItemId = this.props.item.id;
-    const Quantity = event.target.editQuantity.value;
-    const ItemName = event.target.editItem.value;
-    const Aisle = event.target.editAisle.value;
-    APIManager.updateItem(ItemId, Quantity, ItemName, Aisle)
-      .then(() => {
-        return fetch("http://localhost:5002/items");
-      })
-      .then(a => a.json())
-      .then(() => {
-        APIManager.getAll("items").then(items =>
-          this.props.setTheState({
-            item: items
-          })
-        );
-      })
-      .then(
-        this.setState({
-          toggleEditForms: ""
-        })
-      );
-  };
+  // editItem = event => {
+  //   event.preventDefault();
+  //   const ItemId = this.props.item.id;
+  //   const Quantity = event.target.editQuantity.value;
+  //   const ItemName = event.target.editItem.value;
+  //   const Aisle = parseInt(event.target.editAisle.value);
+  //   debugger;
+  //   APIManager.editItems(ItemId, Quantity, ItemName, Aisle, this.props.storeId)
+  //     .then(() => {
+  //       return fetch("http://localhost:5002/items");
+  //     })
+  //     .then(a => a.json())
+  //     .then(() => {
+  //       APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
+  //         this.props.setTheState({
+  //           item: items
+  //         })
+  //       );
+  //     })
+  //     .then(
+  //       this.setState({
+  //         toggleEditForms: ""
+  //       })
+  //     );
+  // };
 
   render() {
     if (this.props.item.archived === false) {

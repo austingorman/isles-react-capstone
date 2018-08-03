@@ -14,17 +14,13 @@ export default class AppViews extends Component {
     archiveDisplay: "store",
     store: [],
     selectedStore: "",
-    archivedItem: [],
     item: [],
     user: []
   };
 
   setItemState = () => {
-    APIManager.getAll("items?_sort=aisle").then(items => {
-      this.setState({
-        item: items,
-        archivedItem: items
-      });
+    APIManager.getAll("items?_sort=aisle&_order=asc").then(items => {
+      this.setState({ item: items, archivedItem: items });
     });
   };
   setStoreState = () => {
@@ -35,8 +31,10 @@ export default class AppViews extends Component {
 
   changeStores = storeId => {
     // / event.preventDefault();
-    console.log(storeId);
-    this.setState({ itemDisplay: "store", selectedStore: storeId });
+    this.setState({
+      itemDisplay: "store",
+      selectedStore: storeId
+    });
     // APIManager.getStore(storeId)
     //   .then(() => {
     //     return fetch(
@@ -67,37 +65,43 @@ export default class AppViews extends Component {
         <Route
           exact
           path="/"
-          render={state => {
+          render={props => {
             return (
               <ItemList
                 setTheState={this.setItemState}
                 item={this.state.item}
                 store={this.state.store}
+                itemDisplay={this.state.itemDisplay}
+                archiver={this.archiver}
               />
             );
           }}
         />
         <Route
           path="/shoppinglist"
-          render={state => {
+          render={props => {
             return (
               <ItemList
+                {...props}
                 setTheState={this.setItemState}
                 item={this.state.item}
                 selectedStore={this.state.selectedStore}
                 itemDisplay={this.state.itemDisplay}
+                archiver={this.archiver}
               />
             );
           }}
         />
         <Route
           path="/archive"
-          render={state => {
+          render={props => {
             return (
               <ArchivedList
+                {...props}
                 setTheState={this.setItemState}
-                archivedItem={this.state.archivedItem}
+                item={this.state.item}
                 selectedStore={this.state.selectedStore}
+                unarchiver={this.unarchiver}
               />
             );
           }}

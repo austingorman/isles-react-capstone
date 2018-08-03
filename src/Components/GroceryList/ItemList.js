@@ -13,7 +13,6 @@ export default class ItemList extends Component {
   getAllStoreItems = () => {
     let store = this.props.selectedStore;
     APIManager.getStore(store).then(response => {
-      console.log(response);
       this.setState({ itemsDisplay: response });
     });
   };
@@ -94,7 +93,6 @@ export default class ItemList extends Component {
       .then(() => {
         return fetch(`http://localhost:5002/items/`);
       })
-      .then(a => a.json())
       .then(() => {
         APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
           this.props.setTheState({
@@ -111,7 +109,6 @@ export default class ItemList extends Component {
       .then(() => {
         return fetch("http://localhost:5002/items");
       })
-      .then(a => a.json())
       .then(() => {
         APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
           this.props.setTheState({
@@ -146,7 +143,8 @@ export default class ItemList extends Component {
                 item={item}
                 itemsDisplay={this.itemsDisplay}
                 archiver={this.archiver}
-                // setTheState={this..setTheState}
+                storeId={this.props.storeId}
+                setTheState={this.props.setTheState}
               />
             ))}
           </ul>

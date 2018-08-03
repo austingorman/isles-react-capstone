@@ -93,6 +93,7 @@ export default class StoreList extends Component {
               archivedItem={this.props.archivedItem}
               item={this.props.item}
               changeStores={this.props.changeStores}
+              toggleDrawer={this.props.toggleDrawer}
             />
           ))}
         </ul>

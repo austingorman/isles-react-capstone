@@ -10,7 +10,6 @@ export default class ArchivedList extends Component {
   getAllStoreItems = () => {
     let store = this.props.selectedStore;
     APIManager.getStore(store).then(response => {
-      console.log(response);
       this.setState({
         archivedDisplay: response
       });
@@ -31,20 +30,17 @@ export default class ArchivedList extends Component {
   unarchiver = itemId => {
     // event.preventDefault();
     APIManager.patchItem(itemId, false)
+      // .then(() => {
+      //   return fetch("http://localhost:5002/items");
+      // })
       .then(() => {
-        return fetch("http://localhost:5002/items");
-      })
-      .then(a => a.json());
-    // .then(() => {
-    //   APIManager.getAll("items").then(items =>
-    //     this.props.setTheState({
-    //       items: items,
-    //       archivedItem: items
-    //     })
-    //   );
-    // });
+        APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
+          this.props.setTheState({
+            item: items
+          })
+        );
+      });
   };
-
   render() {
     return (
       <React.Fragment>

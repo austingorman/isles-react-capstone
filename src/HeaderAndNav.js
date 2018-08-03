@@ -17,6 +17,7 @@ export default class HeaderAndNav extends React.Component {
               archivedItem={this.props.archivedItem}
               item={this.props.item}
               changeStores={this.props.changeStores}
+              toggleDrawer={this.props.toggleDrawer}
             />
             <h1>isles</h1>
           </header>

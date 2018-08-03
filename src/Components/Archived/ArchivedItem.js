@@ -15,7 +15,7 @@ export default class ArchivedItem extends Component {
       .then(a => a.json())
       .then(archivedItem => {
         this.props.setTheState({
-          archivedItem: archivedItem
+          item: archivedItem
         });
       });
   };

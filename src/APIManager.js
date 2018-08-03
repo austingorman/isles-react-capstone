@@ -11,7 +11,7 @@ const APIManager = Object.create(
     getStore: {
       value: storeId => {
         return fetch(
-          `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=desc`
+          `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=asc`
         ).then(e => e.json());
       }
     },
@@ -19,7 +19,7 @@ const APIManager = Object.create(
       value: (deleter, itemId) => {
         return fetch(`http://localhost:5002/${deleter}/${itemId}`, {
           method: "DELETE"
-        });
+        }).then(a => a.json());
       }
     },
     postStore: {
@@ -32,13 +32,13 @@ const APIManager = Object.create(
           body: JSON.stringify({
             name: storeName
           })
-        });
+        }).then(a => a.json());
       }
     },
     postItem: {
       value: (quantity, itemName, aisle, archived, storeId, userId) => {
         return fetch(
-          `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=desc`,
+          `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=asc`,
           {
             method: "POST",
             headers: {
@@ -53,7 +53,7 @@ const APIManager = Object.create(
               userId: userId
             })
           }
-        );
+        ).then(a => a.json());
       }
     },
     patchItem: {
@@ -66,22 +66,33 @@ const APIManager = Object.create(
           body: JSON.stringify({
             archived: archived
           })
-        });
+        }).then(a => a.json());
       }
     },
-    updateItem: {
-      value: (itemId, quantity, itemName, aisle) => {
+    // updateItem: {
+    //   value: (itemId, quantity, itemName, aisle) => {
+    //     return fetch(`http://localhost:5002/items/${itemId}`, {
+    //       method: "PUT",
+    //       headers: {
+    //         "Content-Type": "application/json"
+    //       },
+    //       body: JSON.stringify({
+    //         quantity: quantity,
+    //         name: itemName,
+    //         aisle: aisle,
+    //         archived: false
+    //       })
+    //     });
+    //   }
+    // },
+    editItems: {
+      value: (itemId, dataObject) => {
         return fetch(`http://localhost:5002/items/${itemId}`, {
-          method: "PUT",
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({
-            quantity: quantity,
-            name: itemName,
-            aisle: aisle,
-            archived: false
-          })
+          body: JSON.stringify(dataObject)
         });
       }
     }

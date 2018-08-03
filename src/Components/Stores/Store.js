@@ -37,6 +37,8 @@ export default class Store extends Component {
               onClick={() => {
                 this.props.changeStores(this.props.store.id);
               }}
+              // onClick={this.props.toggleDrawer("left", false)}
+              onKeyDown={this.props.toggleDrawer("left", false)}
             >
               <h3>{this.props.store.name}</h3>
             </Button>
