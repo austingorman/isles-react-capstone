@@ -93,7 +93,7 @@ const APIManager = Object.create(
             "Content-Type": "application/json"
           },
           body: JSON.stringify(dataObject)
-        });
+        }).then(a => a.json());
       }
     }
   }

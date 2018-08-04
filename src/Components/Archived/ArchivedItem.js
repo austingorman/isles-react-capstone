@@ -6,18 +6,9 @@ import Card from "@material-ui/core/Card";
 
 export default class ArchivedItem extends Component {
   deleter = (deleter, id) => {
-    APIManager.deleter(deleter, id)
-      .then(() => {
-        // Remember you HAVE TO return this fetch to the subsequenet `then()`
-        return fetch(`http://localhost:5002/${deleter}`);
-      })
-      // Once the new array of animals is retrieved, set the state
-      .then(a => a.json())
-      .then(archivedItem => {
-        this.props.setTheState({
-          item: archivedItem
-        });
-      });
+    APIManager.deleter(deleter, id).then(() => {
+      this.props.getAllStoreItems();
+    });
   };
 
   render() {

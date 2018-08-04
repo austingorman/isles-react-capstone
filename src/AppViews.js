@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import StoreList from "./Components/Stores/StoreList";
 import ItemList from "./Components/GroceryList/ItemList";
 import ArchivedList from "./Components/Archived/ArchivedList";
 import APIManager from "./APIManager";
@@ -60,6 +59,7 @@ export default class AppViews extends Component {
           setStoreState={this.setStoreState}
           setTheState={this.setItemState}
           archivedItem={this.state.archivedItem}
+          selectedStore={this.state.selectedStore}
           store={this.state.store}
           item={this.state.item}
           changeStores={this.changeStores}
@@ -84,7 +84,7 @@ export default class AppViews extends Component {
           render={props => {
             return (
               <ItemList
-                {...props}
+                // {...props}
                 setTheState={this.setItemState}
                 item={this.state.item}
                 selectedStore={this.state.selectedStore}
@@ -99,7 +99,7 @@ export default class AppViews extends Component {
           render={props => {
             return (
               <ArchivedList
-                {...props}
+                // {...props}
                 setTheState={this.setItemState}
                 item={this.state.item}
                 selectedStore={this.state.selectedStore}

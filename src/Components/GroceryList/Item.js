@@ -33,13 +33,8 @@ export default class Item extends Component {
     };
     console.log(this.props, updatedItem);
     APIManager.editItems(this.props.item.id, updatedItem)
-      .then(a => a.json())
       .then(() => {
-        APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
-          this.props.setTheState({
-            item: items
-          })
-        );
+        this.props.getAllStoreItems();
       })
       .then(
         this.setState({

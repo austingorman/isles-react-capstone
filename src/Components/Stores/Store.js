@@ -6,20 +6,12 @@ import { Redirect } from "react-router-dom";
 
 export default class Store extends Component {
   deleter = (deleter, id) => {
-    APIManager.deleter(deleter, id)
-      .then(() => {
-        // Remember you HAVE TO return this fetch to the subsequenet `then()`
-        return fetch(`http://localhost:5002/${deleter}`);
-      })
-      // Once the new array of animals is retrieved, set the state
-      .then(a => a.json())
-      .then(store => {
-        this.props.setStoreState({
-          stores: store
-        });
+    APIManager.deleter(deleter, id).then(store => {
+      this.props.setStoreState({
+        stores: store
       });
+    });
   };
-
   render() {
     return (
       <li>
@@ -31,13 +23,12 @@ export default class Store extends Component {
           >
             <Icon>delete_forever</Icon>
           </Button>
-          <div>
+          <div onClick={this.props.toggleDrawer("left", false)}>
             <Button
               className="stores"
               onClick={() => {
                 this.props.changeStores(this.props.store.id);
               }}
-              // onClick={this.props.toggleDrawer("left", false)}
               onKeyDown={this.props.toggleDrawer("left", false)}
             >
               <h3>{this.props.store.name}</h3>

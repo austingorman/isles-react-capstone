@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import ArchivedItem from "../Archived/ArchivedItem";
 import APIManager from "../../APIManager";
-import Button from "@material-ui/core/Button";
-import HeaderAndNav from "../../HeaderAndNav";
 
 export default class ArchivedList extends Component {
   state = { archivedDisplay: [] };
@@ -46,6 +44,7 @@ export default class ArchivedList extends Component {
               archivedItem={archivedItem}
               unarchiver={this.unarchiver}
               setTheState={this.props.setTheState}
+              getAllStoreItems={this.getAllStoreItems}
             />
           ))}
         </ul>

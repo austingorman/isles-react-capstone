@@ -164,6 +164,11 @@ ul {
 /* .MuiPaper-root-80 .MuiPaper-elevation16-98 .MuiDrawer-paper-43 .MuiDrawer-paperAnchorLeft-44 {
   margin: 50px 0 0 0;
 } */
+.storeName {
+  display: inline;
+  float: right;
+  margin: 3vw 5vw 0 0;
+}
 .stores {
   color: #0d47a1;
 }

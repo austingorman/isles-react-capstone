@@ -8,74 +8,54 @@
   ],
   "stores": [
     {
-      "name": "Piggly Wiggly",
-      "id": 4
+      "name": "Publix",
+      "id": 1
     },
     {
       "name": "Kroger",
-      "id": 5
+      "id": 2
     }
   ],
   "items": [
     {
-      "quantity": "8787",
-      "name": "hgfh",
-      "aisle": "67789",
-      "storeId": "4",
+      "quantity": "8",
+      "name": "Dog Treats",
+      "aisle": 25,
+      "archived": false,
+      "storeId": "1",
       "id": 1
     },
     {
-      "quantity": "234",
+      "quantity": "2",
       "name": "dog treats",
-      "aisle": "9",
-      "storeId": "4",
+      "aisle": "4",
+      "archived": false,
+      "storeId": "1",
+      "id": 2
+    },
+    {
+      "quantity": "8",
+      "name": "La Croix",
+      "aisle": 1,
+      "archived": true,
+      "storeId": "2",
       "id": 3
     },
     {
       "quantity": "5",
-      "name": "hh",
-      "aisle": "888",
-      "storeId": "4",
-      "id": 5
-    },
-    {
-      "quantity": "5",
-      "name": "asfkj",
-      "aisle": "532579",
-      "storeId": "4",
-      "id": 6
-    },
-    {
-      "quantity": "1",
-      "name": "bag of coffee",
-      "aisle": "8",
-      "archived": true,
-      "storeId": "4",
-      "id": 7
-    },
-    {
-      "quantity": "8",
       "name": "Dog Treats",
-      "aisle": 9,
+      "aisle": 3,
       "archived": false,
-      "storeId": "5",
-      "id": 8
+      "storeId": "1",
+      "id": 4
     },
     {
-      "quantity": "1",
-      "name": "Dog bones",
-      "aisle": 9,
-      "archived": false,
-      "storeId": "5",
-      "id": 9
-    },
-    {
-      "quantity": "2",
+      "quantity": "3",
       "name": "La Croix",
-      "aisle": 8,
+      "aisle": "9",
       "archived": false,
-      "storeId": "4",
-      "id": 10
+      "storeId": "2",
+      "id": 5
     }
   ]
 }

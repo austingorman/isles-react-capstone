@@ -91,14 +91,7 @@ export default class ItemList extends Component {
     // const StoreUserId = this.props.item.userId;
     APIManager.postItem(Quantity, ItemName, Aisle, false, String(StoreId))
       .then(() => {
-        return fetch(`http://localhost:5002/items/`);
-      })
-      .then(() => {
-        APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
-          this.props.setTheState({
-            item: items
-          })
-        );
+        this.getAllStoreItems();
       })
       .then(this.setState({ toggleForms: "" }));
   };
@@ -137,6 +130,7 @@ export default class ItemList extends Component {
                 archiver={this.archiver}
                 storeId={this.props.storeId}
                 setTheState={this.props.setTheState}
+                getAllStoreItems={this.getAllStoreItems}
               />
             ))}
           </ul>
