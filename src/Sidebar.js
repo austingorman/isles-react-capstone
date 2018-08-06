@@ -25,6 +25,8 @@ export default class Sidebar extends Component {
           storeNamer={this.props.storeNamer}
           setTheState={this.props.setItemState}
           changeStores={this.props.changeStores}
+          handleFieldChange={this.props.handleFieldChange}
+          editStoreName={this.props.editStoreName}
         />
       </div>
     );

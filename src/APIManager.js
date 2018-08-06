@@ -35,6 +35,19 @@ const APIManager = Object.create(
         }).then(a => a.json());
       }
     },
+    editStoreName: {
+      value: (storeId, dataObject) => {
+        return fetch(`http://localhost:5002/stores/${storeId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: dataObject
+          })
+        }).then(a => a.json());
+      }
+    },
     postItem: {
       value: (quantity, itemName, aisle, archived, storeId, userId) => {
         return fetch(

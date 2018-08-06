@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ItemList from "./Components/GroceryList/ItemList";
 import ArchivedList from "./Components/Archived/ArchivedList";
+import Home from "./Components/Home";
 import APIManager from "./APIManager";
 import HeaderAndNav from "./HeaderAndNav";
 import Auth from "./Components/Auth/Auth";
@@ -13,8 +14,10 @@ export default class AppViews extends Component {
     archiveDisplay: "store",
     store: [],
     selectedStore: "",
+    selectedStoreName: "",
     item: [],
-    user: []
+    user: [],
+    newStoreName: ""
   };
 
   setItemState = () => {
@@ -30,26 +33,34 @@ export default class AppViews extends Component {
     });
   };
 
-  changeStores = storeId => {
+  changeStores = (storeId, storeName) => {
     // / event.preventDefault();
     this.setState({
       itemDisplay: "store",
-      selectedStore: storeId
+      selectedStore: storeId,
+      selectedStoreName: storeName
     });
-    // APIManager.getStore(storeId)
-    //   .then(() => {
-    //     return fetch(
-    //       `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=desc`
-    //     );
-    //   })
-    //   .then(a => a.json())
-    //   .then(items =>
-    //     this.setState({
-    //       items: items,
-    //       archivedItem: items
-    //     })
-    //   );
   };
+
+  handleFieldChange = evt => {
+    const stateToChange = { ...this.state };
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+    console.log(this.state);
+  };
+
+  editStoreName = id => {
+    const updatedItem = this.state.newStoreName;
+    return APIManager.editStoreName(id, updatedItem).then(() => {
+      APIManager.getAll("stores").then(stores =>
+        this.setState({
+          store: stores,
+          newStoreName: ""
+        })
+      );
+    });
+  };
+
   render() {
     // const auth = new Auth();
     // auth.login();
@@ -57,9 +68,12 @@ export default class AppViews extends Component {
       <React.Fragment>
         <HeaderAndNav
           setStoreState={this.setStoreState}
+          handleFieldChange={this.handleFieldChange}
+          editStoreName={this.editStoreName}
           setTheState={this.setItemState}
           archivedItem={this.state.archivedItem}
           selectedStore={this.state.selectedStore}
+          selectedStoreName={this.state.selectedStoreName}
           store={this.state.store}
           item={this.state.item}
           changeStores={this.changeStores}
@@ -68,15 +82,7 @@ export default class AppViews extends Component {
           exact
           path="/"
           render={props => {
-            return (
-              <ItemList
-                setTheState={this.setItemState}
-                item={this.state.item}
-                store={this.state.store}
-                itemDisplay={this.state.itemDisplay}
-                archiver={this.archiver}
-              />
-            );
+            return <Home />;
           }}
         />
         <Route
@@ -84,7 +90,6 @@ export default class AppViews extends Component {
           render={props => {
             return (
               <ItemList
-                // {...props}
                 setTheState={this.setItemState}
                 item={this.state.item}
                 selectedStore={this.state.selectedStore}
@@ -99,7 +104,6 @@ export default class AppViews extends Component {
           render={props => {
             return (
               <ArchivedList
-                // {...props}
                 setTheState={this.setItemState}
                 item={this.state.item}
                 selectedStore={this.state.selectedStore}

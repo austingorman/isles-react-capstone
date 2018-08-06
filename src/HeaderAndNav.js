@@ -4,13 +4,6 @@ import NavSwipe from "./NavSwipe";
 // import SwipeViews from "./SwipeViews";
 
 export default class HeaderAndNav extends React.Component {
-  state = { storeName: "" };
-
-  storeNamer = name => {
-    this.setState({
-      storeName: name
-    });
-  };
   render() {
     return (
       <React.Fragment>
@@ -23,9 +16,11 @@ export default class HeaderAndNav extends React.Component {
               storeNamer={this.storeNamer}
               setTheState={this.props.setItemState}
               changeStores={this.props.changeStores}
+              handleFieldChange={this.props.handleFieldChange}
+              editStoreName={this.props.editStoreName}
             />
             <h1>isles</h1>
-            <h2 className="storeName">{this.state.storeName}</h2>
+            <h2 className="storeName">{this.props.selectedStoreName}</h2>
           </header>
           <Nav />
         </div>
