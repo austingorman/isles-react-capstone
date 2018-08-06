@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Nav from "./Nav";
 import NavSwipe from "./NavSwipe";
 // import SwipeViews from "./SwipeViews";
@@ -13,12 +13,14 @@ export default class HeaderAndNav extends React.Component {
               setStoreState={this.props.setStoreState}
               store={this.props.store}
               user={this.props.user}
+              storeNamer={this.storeNamer}
               setTheState={this.props.setItemState}
-              archivedItem={this.props.archivedItem}
-              item={this.props.item}
               changeStores={this.props.changeStores}
+              handleFieldChange={this.props.handleFieldChange}
+              editStoreName={this.props.editStoreName}
             />
-            <h1>Isles</h1>
+            <h1>isles</h1>
+            <h2 className="storeName">{this.props.selectedStoreName}</h2>
           </header>
           <Nav />
         </div>

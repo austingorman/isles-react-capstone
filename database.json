@@ -8,61 +8,54 @@
   ],
   "stores": [
     {
-      "name": "Publix",
+      "name": "Publixs",
       "id": 1
     },
     {
       "name": "Kroger",
-      "id": 3
+      "id": 2
     }
   ],
   "items": [
     {
-      "quantity": "1",
-      "name": "Canned Green Beans",
-      "aisle": 5,
-      "archived": false,
-      "id": 1,
-      "storeId": 1
-    },
-    {
-      "quantity": "3",
-      "name": "Dog Treats",
-      "aisle": 9,
-      "archived": false,
-      "id": 2,
-      "storeId": 1
-    },
-    {
-      "quantity": "3",
-      "name": "Hams",
-      "aisle": 10,
-      "archived": false,
-      "id": 3,
-      "storeId": 1
-    },
-    {
       "quantity": "8",
-      "name": "Hams",
-      "aisle": 8,
+      "name": "Dog Treats",
+      "aisle": 25,
       "archived": false,
-      "id": 4,
-      "storeId": 1
-    },
-    {
-      "quantity": "1",
-      "name": "Strawberrys",
-      "aisle": 16,
-      "archived": false,
-      "id": 5,
-      "storeId": 1
+      "storeId": "1",
+      "id": 1
     },
     {
       "quantity": "2",
+      "name": "dog treats",
+      "aisle": "4",
+      "archived": false,
+      "storeId": "1",
+      "id": 2
+    },
+    {
+      "quantity": "9",
       "name": "La Croix",
+      "aisle": 1,
+      "archived": true,
+      "storeId": "2",
+      "id": 3
+    },
+    {
+      "quantity": "7",
+      "name": "Dog Treats",
       "aisle": 3,
       "archived": false,
-      "id": 6
+      "storeId": "1",
+      "id": 4
+    },
+    {
+      "quantity": "3",
+      "name": "La Croix",
+      "aisle": "9",
+      "archived": false,
+      "storeId": "2",
+      "id": 5
     }
   ]
 }

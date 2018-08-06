@@ -5,9 +5,7 @@ import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import Icon from "@material-ui/core/Icon";
-// import Divider from "@material-ui/core/Divider";
 import Sidebar from "./Sidebar";
-// import { mailFolderListItems, otherMailFolderListItems } from "./tileData";
 
 const styles = {
   list: {
@@ -39,10 +37,11 @@ export default class SwipeableTemporaryDrawer extends React.Component {
           toggleDrawer={this.toggleDrawer}
           store={this.props.store}
           user={this.props.user}
+          storeNamer={this.props.storeNamer}
           setTheState={this.props.setItemState}
-          archivedItem={this.props.archivedItem}
-          item={this.props.item}
           changeStores={this.props.changeStores}
+          handleFieldChange={this.props.handleFieldChange}
+          editStoreName={this.props.editStoreName}
         />
       </div>
     );

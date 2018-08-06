@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import StoreList from "./Components/Stores/StoreList";
 import ItemList from "./Components/GroceryList/ItemList";
 import ArchivedList from "./Components/Archived/ArchivedList";
+import Home from "./Components/Home";
 import APIManager from "./APIManager";
 import HeaderAndNav from "./HeaderAndNav";
 import Auth from "./Components/Auth/Auth";
@@ -9,14 +9,22 @@ import { login, logout, isLoggedIn } from "./Components/Auth/AuthService";
 import { Route } from "react-router-dom";
 
 export default class AppViews extends Component {
-  state = { store: [], item: [], archivedItem: [], user: [] };
+  state = {
+    itemDisplay: "store",
+    archiveDisplay: "store",
+    store: [],
+    selectedStore: "",
+    selectedStoreName: "",
+    item: [],
+    user: [],
+    newStoreName: ""
+  };
 
   setItemState = () => {
-    APIManager.getAll("items?_sort=aisle").then(items => {
-      this.setState({
-        item: items,
-        archivedItem: items
-      });
+    APIManager.getAll("items?_sort=aisle&_order=asc").then(items => {
+      console.log(items, "items");
+
+      this.setState({ item: items });
     });
   };
   setStoreState = () => {
@@ -25,24 +33,34 @@ export default class AppViews extends Component {
     });
   };
 
-  changeStores = storeId => {
-    // event.preventDefault();
-    console.log(storeId);
-    APIManager.getStore(storeId)
-      .then(() => {
-        return fetch(
-          `http://localhost:5002/items?storeId=${storeId}&_sort=aisle&_order=desc`
-        );
-      })
-      .then(a => a.json())
-      .then(() => {
-        items =>
-          this.props.setTheState({
-            items: items,
-            archivedItem: items
-          });
-      });
+  changeStores = (storeId, storeName) => {
+    // / event.preventDefault();
+    this.setState({
+      itemDisplay: "store",
+      selectedStore: storeId,
+      selectedStoreName: storeName
+    });
   };
+
+  handleFieldChange = evt => {
+    const stateToChange = { ...this.state };
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+    console.log(this.state);
+  };
+
+  editStoreName = id => {
+    const updatedItem = this.state.newStoreName;
+    return APIManager.editStoreName(id, updatedItem).then(() => {
+      APIManager.getAll("stores").then(stores =>
+        this.setState({
+          store: stores,
+          newStoreName: ""
+        })
+      );
+    });
+  };
+
   render() {
     // const auth = new Auth();
     // auth.login();
@@ -50,8 +68,12 @@ export default class AppViews extends Component {
       <React.Fragment>
         <HeaderAndNav
           setStoreState={this.setStoreState}
+          handleFieldChange={this.handleFieldChange}
+          editStoreName={this.editStoreName}
           setTheState={this.setItemState}
           archivedItem={this.state.archivedItem}
+          selectedStore={this.state.selectedStore}
+          selectedStoreName={this.state.selectedStoreName}
           store={this.state.store}
           item={this.state.item}
           changeStores={this.changeStores}
@@ -59,36 +81,33 @@ export default class AppViews extends Component {
         <Route
           exact
           path="/"
-          render={state => {
-            return (
-              <ItemList
-                setTheState={this.setItemState}
-                item={this.state.item}
-                store={this.state.store}
-              />
-            );
+          render={props => {
+            return <Home />;
           }}
         />
         <Route
           path="/shoppinglist"
-          render={state => {
+          render={props => {
             return (
               <ItemList
                 setTheState={this.setItemState}
                 item={this.state.item}
-                store={this.state.store}
+                selectedStore={this.state.selectedStore}
+                itemDisplay={this.state.itemDisplay}
+                archiver={this.archiver}
               />
             );
           }}
         />
         <Route
           path="/archive"
-          render={state => {
+          render={props => {
             return (
               <ArchivedList
                 setTheState={this.setItemState}
-                archivedItem={this.state.archivedItem}
-                store={this.state.store}
+                item={this.state.item}
+                selectedStore={this.state.selectedStore}
+                unarchiver={this.unarchiver}
               />
             );
           }}

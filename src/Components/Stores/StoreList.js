@@ -21,17 +21,13 @@ export default class StoreList extends Component {
     // const UserID = this.props.user.
     APIManager.postStore(StoreName)
       .then(() => {
-        return fetch("http://localhost:5002/stores");
-      })
-      .then(a => a.json())
-      .then(() => {
         APIManager.getAll("stores").then(stores =>
           this.props.setStoreState({
             store: stores
           })
         );
       })
-      .then(this.setState({ toggleForms: "" }));
+      .then(this.setState({ toggleStores: "" }));
   };
   formLauncher = () => {
     if (this.state.toggleStores === "") {
@@ -56,8 +52,6 @@ export default class StoreList extends Component {
               color="primary"
               id="submitItemButton"
               type="submit"
-              onClick={this.props.toggleDrawer("left", false)}
-              onKeyDown={this.props.toggleDrawer("left", false)}
             >
               Submit
             </Button>
@@ -70,7 +64,6 @@ export default class StoreList extends Component {
       });
     }
   };
-
   render() {
     return (
       <React.Fragment>
@@ -90,9 +83,11 @@ export default class StoreList extends Component {
               store={store}
               setStoreState={this.props.setStoreState}
               setTheState={this.props.setItemState}
-              archivedItem={this.props.archivedItem}
-              item={this.props.item}
+              storeNamer={this.props.storeNamer}
               changeStores={this.props.changeStores}
+              toggleDrawer={this.props.toggleDrawer}
+              handleFieldChange={this.props.handleFieldChange}
+              editStoreName={this.props.editStoreName}
             />
           ))}
         </ul>
