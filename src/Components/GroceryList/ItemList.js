@@ -120,7 +120,7 @@ export default class ItemList extends Component {
             </div>
             {this.state.toggleForms}
           </Card>
-          <ul>
+          <ul className="groceryItems">
             {this.state.itemsDisplay.map(item => (
               <Item
                 key={item.id}

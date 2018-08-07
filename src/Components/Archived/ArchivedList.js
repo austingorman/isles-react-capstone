@@ -37,7 +37,7 @@ export default class ArchivedList extends Component {
     return (
       <React.Fragment>
         {/* <HeaderAndNav /> */}
-        <ul className="archivedItems">
+        <ul className="groceryItems">
           {this.state.archivedDisplay.map(archivedItem => (
             <ArchivedItem
               key={archivedItem.id}

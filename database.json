@@ -18,14 +18,6 @@
   ],
   "items": [
     {
-      "quantity": "8",
-      "name": "Dog Treats",
-      "aisle": 25,
-      "archived": false,
-      "storeId": "1",
-      "id": 1
-    },
-    {
       "quantity": "2",
       "name": "dog treats",
       "aisle": "4",
