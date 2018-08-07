@@ -88,6 +88,7 @@ export default class StoreList extends Component {
               toggleDrawer={this.props.toggleDrawer}
               handleFieldChange={this.props.handleFieldChange}
               editStoreName={this.props.editStoreName}
+              setNewStoreName={this.props.setNewStoreName}
             />
           ))}
         </ul>

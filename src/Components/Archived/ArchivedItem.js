@@ -28,7 +28,7 @@ export default class ArchivedItem extends Component {
             <h5 className="groceryItem">in aisle</h5>
             <h5 className="groceryItem">{this.props.archivedItem.aisle}</h5>
             <Button
-              id="editButton"
+              className="editButton"
               type="submit"
               onClick={() => this.props.unarchiver(this.props.archivedItem.id)}
             >

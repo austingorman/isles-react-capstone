@@ -17,38 +17,13 @@ export default class Store extends Component {
 
   updateStoreName = e => {
     e.preventDefault();
-    const updatedItem = this.state.newStoreName;
+    // const updatedItem = this.props.newStoreName;
     this.props.editStoreName(this.props.store.id).then(
       this.setState({
         toggleEditForms: ""
       })
     );
   };
-  // handleFieldChange = evt => {
-  //   const stateToChange = { ...this.state };
-  //   stateToChange[evt.target.id] = evt.target.value;
-  //   this.setState(stateToChange);
-  //   console.log(this.state);
-  // };
-
-  // editStoreName = () => {
-  //   // e.preventDefault();
-  //   const updatedItem = this.state.name;
-
-  //   APIManager.editStoreName(this.props.store.id, updatedItem)
-  //     .then(() => {
-  //       APIManager.getAll("stores").then(stores =>
-  //         this.props.setStoreState({
-  //           store: stores
-  //         })
-  //       );
-  //     })
-  //     .then(
-  //       this.setState({
-  //         toggleEditForms: ""
-  //       })
-  //     );
-  // };
 
   formLauncher = () => {
     if (this.state.toggleEditForms === "") {
@@ -71,6 +46,7 @@ export default class Store extends Component {
               color="primary"
               id="submitItemButton"
               type="submit"
+              onClick={this.props.setNewStoreName(this.props.store.name)}
             >
               Submit
             </Button>
@@ -84,18 +60,17 @@ export default class Store extends Component {
   render() {
     return (
       <li>
-        <div id="stores">
+        <div className="store">
           <Button
-            id="deleteButton"
+            className="deleteStoreButton"
             type="submit"
             onClick={() => this.deleter("stores", this.props.store.id)}
           >
             <Icon>delete_forever</Icon>
           </Button>
           <div onClick={this.props.toggleDrawer("left", false)}>
-            <Link to="/shoppingList">
+            <Link to="/shoppingList" className="changeStoresButton">
               <Button
-                className="stores"
                 onClick={() => {
                   this.props.changeStores(
                     this.props.store.id,
@@ -110,7 +85,7 @@ export default class Store extends Component {
           </div>
           <Button
             variant="text"
-            className="editButton"
+            className="editStoreButton"
             type="sumbit"
             onClick={this.formLauncher}
           >

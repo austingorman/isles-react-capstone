@@ -140,7 +140,7 @@ export default class Item extends Component {
             <h5 className="groceryItem">{this.props.item.aisle}</h5>
             <Button
               variant="text"
-              id="editButton"
+              className="editButton"
               type="sumbit"
               onClick={this.formLauncher}
             >
