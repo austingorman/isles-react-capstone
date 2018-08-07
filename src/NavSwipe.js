@@ -42,6 +42,7 @@ export default class SwipeableTemporaryDrawer extends React.Component {
           changeStores={this.props.changeStores}
           handleFieldChange={this.props.handleFieldChange}
           editStoreName={this.props.editStoreName}
+          setNewStoreName={this.props.setNewStoreName}
         />
       </div>
     );

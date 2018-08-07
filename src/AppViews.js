@@ -61,6 +61,9 @@ export default class AppViews extends Component {
     });
   };
 
+  setNewStoreName = storeName => {
+    this.setState({ newStoreName: storeName });
+  };
   render() {
     // const auth = new Auth();
     // auth.login();
@@ -77,6 +80,7 @@ export default class AppViews extends Component {
           store={this.state.store}
           item={this.state.item}
           changeStores={this.changeStores}
+          setNewStoreName={this.setNewStoreName}
         />
         <Route
           exact

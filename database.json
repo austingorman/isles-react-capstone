@@ -8,7 +8,7 @@
   ],
   "stores": [
     {
-      "name": "Publixs",
+      "name": "Publix",
       "id": 1
     },
     {
@@ -29,7 +29,7 @@
       "quantity": "2",
       "name": "dog treats",
       "aisle": "4",
-      "archived": false,
+      "archived": true,
       "storeId": "1",
       "id": 2
     },
@@ -37,7 +37,7 @@
       "quantity": "9",
       "name": "La Croix",
       "aisle": 1,
-      "archived": true,
+      "archived": false,
       "storeId": "2",
       "id": 3
     },
@@ -53,7 +53,7 @@
       "quantity": "3",
       "name": "La Croix",
       "aisle": "9",
-      "archived": false,
+      "archived": true,
       "storeId": "2",
       "id": 5
     }
