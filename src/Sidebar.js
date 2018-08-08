@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { login, logout, isLoggedIn } from "./Components/Auth/AuthService";
+import { login, logout } from "./Components/Auth/Auth";
 import StoreList from "./Components/Stores/StoreList";
 
 export default class Sidebar extends Component {
   render() {
     return (
       <div id="navSwipeBar">
-        {isLoggedIn() ? <Link to="/">Item List</Link> : ""}
-        {isLoggedIn() ? (
-          <button className="sidebar" onClick={() => logout()}>
+        {/* {this.props.auth.isAuthenticated() ? <Link to="/">Home</Link> : ""} */}
+        {this.props.auth.isAuthenticated() ? (
+          <button className="sidebar" onClick={() => this.props.auth.logout()}>
             Log out
           </button>
         ) : (
-          <button className="sidebar" onClick={() => login()}>
+          <button className="sidebar" onClick={() => this.props.auth.login()}>
             Log In
           </button>
         )}

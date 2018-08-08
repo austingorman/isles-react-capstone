@@ -18,6 +18,8 @@ export default class HeaderAndNav extends React.Component {
               handleFieldChange={this.props.handleFieldChange}
               editStoreName={this.props.editStoreName}
               setNewStoreName={this.props.setNewStoreName}
+              isAuthenticated={this.props.isAuthenticated}
+              auth={this.props.auth}
             />
             <h1>isles</h1>
             <h2 className="storeName">{this.props.selectedStoreName}</h2>

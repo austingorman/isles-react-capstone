@@ -16,12 +16,19 @@ export default class StoreList extends Component {
 
   addNewStore = event => {
     event.preventDefault();
-    const StoreName = event.target.storeName.value;
+    const name = event.target.storeName.value;
+    let id = localStorage.getItem("userId");
+
+    const StoreObject = {
+      name: name,
+      userId: id
+    };
 
     // const UserID = this.props.user.
-    APIManager.postStore(StoreName)
+    APIManager.postStore(StoreObject)
       .then(() => {
-        APIManager.getAll("stores").then(stores =>
+        let id = localStorage.getItem("userId");
+        APIManager.getAll(`stores?userId=${id}`).then(stores =>
           this.props.setStoreState({
             store: stores
           })

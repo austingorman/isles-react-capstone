@@ -1,15 +1,29 @@
 {
-  "user": [
+  "users": [
     {
-      "id": 1,
-      "username": "spaceman",
-      "password": "password"
+      "sub": "google-oauth2|114927078561546880615",
+      "id": 1
+    },
+    {
+      "sub": "auth0|5b6b4fae905b2d2efbb90cf2",
+      "id": 2
     }
   ],
   "stores": [
     {
       "name": "Publix",
-      "id": 3
+      "id": 3,
+      "userId": "1"
+    },
+    {
+      "name": "Kroger",
+      "userId": "1",
+      "id": 4
+    },
+    {
+      "name": "Shits R Us",
+      "userId": "2",
+      "id": 5
     }
   ],
   "items": [
@@ -48,7 +62,7 @@
     {
       "quantity": "2",
       "name": "Red Bell Peppers",
-      "aisle": 0,
+      "aisle": "2",
       "archived": false,
       "storeId": "3",
       "id": 10
@@ -64,7 +78,7 @@
     {
       "quantity": "4",
       "name": "carrots",
-      "aisle": 0,
+      "aisle": "9",
       "archived": false,
       "storeId": "3",
       "id": 13
@@ -73,7 +87,7 @@
       "quantity": "2",
       "name": "green onions",
       "aisle": 0,
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 14
     },
@@ -81,7 +95,7 @@
       "quantity": "1",
       "name": "lemon",
       "aisle": 0,
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 15
     },
@@ -126,14 +140,6 @@
       "id": 20
     },
     {
-      "quantity": "300",
-      "name": "Dog Treats",
-      "aisle": 9,
-      "archived": false,
-      "storeId": "3",
-      "id": 21
-    },
-    {
       "quantity": "1",
       "name": "salmon",
       "aisle": 3,
@@ -148,6 +154,46 @@
       "archived": false,
       "storeId": "3",
       "id": 23
+    },
+    {
+      "quantity": "1",
+      "name": "La Croix",
+      "aisle": 25,
+      "archived": false,
+      "storeId": "3",
+      "id": 24
+    },
+    {
+      "quantity": "50000",
+      "name": "Diapers",
+      "aisle": 9009,
+      "archived": false,
+      "storeId": "5",
+      "id": 25
+    },
+    {
+      "quantity": "1",
+      "name": "Ply of Toilet Paper",
+      "aisle": 4,
+      "archived": false,
+      "storeId": "5",
+      "id": 27
+    },
+    {
+      "quantity": "2",
+      "name": "New Unsoiled Pants",
+      "aisle": 56,
+      "archived": false,
+      "storeId": "5",
+      "id": 28
+    },
+    {
+      "quantity": "1",
+      "name": "La Croix",
+      "aisle": 8,
+      "archived": false,
+      "storeId": "3",
+      "id": 29
     }
   ]
 }
