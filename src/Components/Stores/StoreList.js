@@ -84,8 +84,6 @@ export default class StoreList extends Component {
         </div>
         {this.state.toggleStores}
         <ul>
-          {console.log(this.props.store)}
-
           {this.props.store.map(store => (
             <Store
               key={store.id}
