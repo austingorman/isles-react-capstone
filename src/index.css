@@ -136,13 +136,23 @@ ul {
 .deleteButton {
   display: inline;
   position: relative;
-  top: 3px;
-  left: 10px;
+  /* top: 3px; */
+  /* left: 10px; */
   float: left;
   width: 10px;
 }
+.editButton {
+  /* background-color: sandybrown; */
+  display: inline;
+  margin: 0px 0 -10px 0;
+  padding: 0;
+  float: right;
+  /* position: relative;
+  top: 0.5vw; */
+  /* width: 30px; */
+}
 .checkBox {
-  margin: 8px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
   display: inline;
 }
 .groceryItems {
@@ -210,16 +220,7 @@ ul {
   display: block;
   background-color: #f06a49;
 }
-.editButton {
-  /* background-color: sandybrown; */
-  display: inline;
-  margin: 10px 0 -10px 0;
-  padding: 0;
-  float: right;
-  position: relative;
-  top: 0.5vw;
-  /* width: 30px; */
-}
+
 .MuiButtonBase-root-25 .MuiButton-root-1 .MuiButton-text-3 .MuiButton-flat-6 {
   margin: 0 auto;
   display: inline;
@@ -248,8 +249,11 @@ ul {
 }
 .storesHeadline {
   margin: 0 auto;
-  padding: 0 90px;
-  display: inline;
+  padding: 0 88px;
+  background-color: #f06a49;
+  color: white;
+  display: inline-block;
+  text-align: center;
 }
 /* .MuiPaper-root-80 .MuiPaper-elevation16-98 .MuiDrawer-paper-43 .MuiDrawer-paperAnchorLeft-44 {
   margin: 50px 0 0 0;

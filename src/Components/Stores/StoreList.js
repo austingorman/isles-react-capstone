@@ -67,9 +67,9 @@ export default class StoreList extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <div className="sidebar"> */}
-        <h2 className="storesHeadline">Stores</h2>
-        {/* </div> */}
+        <div className="sidebar">
+          <h2 className="storesHeadline">Stores</h2>
+        </div>
         <div className="addStoreButton">
           <Button onClick={this.formLauncher}>
             <Icon> add </Icon>New Store
