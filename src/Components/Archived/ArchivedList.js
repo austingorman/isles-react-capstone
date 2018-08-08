@@ -37,17 +37,19 @@ export default class ArchivedList extends Component {
     return (
       <React.Fragment>
         {/* <HeaderAndNav /> */}
-        <ul className="archivedItems">
-          {this.state.archivedDisplay.map(archivedItem => (
-            <ArchivedItem
-              key={archivedItem.id}
-              archivedItem={archivedItem}
-              unarchiver={this.unarchiver}
-              setTheState={this.props.setTheState}
-              getAllStoreItems={this.getAllStoreItems}
-            />
-          ))}
-        </ul>
+        <div className="overflowArchivedList">
+          <ul className="groceryItems">
+            {this.state.archivedDisplay.map(archivedItem => (
+              <ArchivedItem
+                key={archivedItem.id}
+                archivedItem={archivedItem}
+                unarchiver={this.unarchiver}
+                setTheState={this.props.setTheState}
+                getAllStoreItems={this.getAllStoreItems}
+              />
+            ))}
+          </ul>
+        </div>
       </React.Fragment>
     );
   }

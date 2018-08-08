@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
+import List from "@material-ui/core/List";
 
 export default class ItemList extends Component {
   state = { toggleForms: "", itemsDisplay: [] };
@@ -106,21 +107,8 @@ export default class ItemList extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
-          <Card>
-            <div>
-              <Button
-                variant="contained"
-                id="addItemButton"
-                onClick={this.formLauncher}
-              >
-                <Icon id="plus">add</Icon>
-                {/* <h4>Add New Item</h4> */}
-              </Button>
-            </div>
-            {this.state.toggleForms}
-          </Card>
-          <ul>
+        <div className="overflowList">
+          <ul className="groceryItems">
             {this.state.itemsDisplay.map(item => (
               <Item
                 key={item.id}
@@ -133,6 +121,19 @@ export default class ItemList extends Component {
               />
             ))}
           </ul>
+          <Card id="addItemButtonForm">
+            <div>
+              {this.state.toggleForms}
+              <Button
+                variant="contained"
+                id="addItemButton"
+                onClick={this.formLauncher}
+              >
+                <Icon id="plus">add</Icon>
+                {/* <h4>Add New Item</h4> */}
+              </Button>
+            </div>
+          </Card>
         </div>
       </React.Fragment>
     );

@@ -7,7 +7,8 @@ body {
 }
 
 * {
-  /* margin: 0 auto; */
+  margin: 0 auto;
+  border-radius: 0 !important;
   font-family: "Roboto";
 }
 
@@ -15,8 +16,9 @@ header {
   /* display: block; */
   margin: 0 auto;
   width: 100vw;
+  height: 58px;
   background-color: #0d47a1;
-  padding: 3vw 0 0 0;
+  padding: 8px 0 0 0;
   display: block;
 }
 
@@ -28,7 +30,7 @@ h1 {
 }
 h3 {
   display: inline-block;
-  margin: 10vw 25vw;
+  margin: 120px 10vw;
 }
 h4 {
   display: inline-block;
@@ -38,7 +40,7 @@ h4 {
 h5 {
   padding: 15px 0 0 0;
   display: inline;
-  color: #0d47a1;
+  color: black;
 }
 
 ul {
@@ -54,8 +56,9 @@ ul {
 }
 
 #navSwipeBar {
-  margin: 20px 50px;
-  display: inline-block;
+  margin: 20px auto;
+  width: 100%;
+  display: block;
 }
 
 #plus {
@@ -66,41 +69,24 @@ ul {
   top: 2px;
 }
 
-#addItemButton {
-  font-size: 15px;
-  width: 100vw;
-  font-weight: bold;
-  margin: 0 0 5px 0;
-  display: block;
-  background-color: #80d8ff;
-}
-
 #submitItemButton {
   font-size: 15px;
   /* font-weight: bold; */
   display: block;
-  background-color: sandybrown;
+  background-color: #80d8ff;
   width: auto;
   /* float: right; */
-  margin: 8px auto;
+  margin: 20px auto;
 }
 
 #editSubmitItemButton {
   font-size: 15px;
   display: block;
-  background-color: sandybrown;
+  background-color: #80d8ff;
   margin: 8px auto;
   width: auto;
 }
 
-#deleteButton {
-  display: inline;
-  position: relative;
-  top: 3.5px;
-  /* padding: 8px 0px; */
-  float: left;
-  width: 10px;
-}
 #deleteStoreButton {
   display: inline;
   position: relative;
@@ -108,12 +94,6 @@ ul {
   /* padding: 8px 0px; */
   float: left;
   width: 10px;
-}
-
-#groceryItems {
-  display: inline-block;
-  width: 102vw;
-  margin: -5px -3px 0px -3px;
 }
 
 #inputForms {
@@ -137,38 +117,121 @@ ul {
   /* margin: 0 3.5vw; */
   display: inline;
 }
-.tab {
-  background-color: #0d47a1;
-  color: white;
-  display: inline;
-  width: 50vw;
-  margin: -20px;
-}
 
+#addItemButtonForm {
+  font-size: 15px;
+  width: 100vw;
+  /* height: 210px; */
+  font-weight: bold;
+  position: fixed;
+  bottom: 66px;
+  /* margin: 0 0 5px 0; */
+  display: block;
+  background-color: #white;
+}
+.MuiButton-root-1 {
+  padding: 0px auto !important;
+  margin: 0px auto;
+}
+.deleteButton {
+  display: inline;
+  position: relative;
+  /* top: 3px; */
+  /* left: 10px; */
+  float: left;
+  width: 10px;
+}
 .editButton {
   /* background-color: sandybrown; */
   display: inline;
-  margin: 10px 0 -10px 0;
+  margin: 0px 0 -10px 0;
   padding: 0;
   float: right;
-  position: relative;
-  bottom: 1vw;
+  /* position: relative;
+  top: 0.5vw; */
   /* width: 30px; */
 }
+.checkBox {
+  margin: 0px 10px 0px 10px;
+  display: inline;
+}
+.groceryItems {
+  display: inline;
+  width: 100vw;
+  height: 48px;
+  margin: 0 0 3px 0;
+}
+.itemContainer {
+  height: 48px !important;
+  display: inline;
+}
+.overflowList {
+  overflow: auto;
+  position: absolute;
+  /* top: 115.25px; */
+  padding: 98px 0 66px 0;
+  width: 100vw;
+  height: 100vmax;
+  display: inline-block;
+  z-index: -1;
+}
+.overflowArchivedList {
+  overflow: auto;
+  position: absolute;
+  /* top: 115.25px; */
+  padding: 98px 0 0px 0;
+  width: 100vw;
+  height: 100vmax;
+  display: inline-block;
+  z-index: -1;
+}
+.groceryItem {
+  display: inline-block;
+  margin: 0px 1px 0px 1px;
+  /* width: 300px; */
+}
+.selected {
+  background-color: #0c4192 !important;
+  opacity: 1 !important;
+  color: white;
+  display: inline;
+  width: 50vw;
+  /* margin: -20px; */
+}
+
+.notSelected {
+  background-color: #0d47a1;
+  color: rgba(255, 255, 255, 0.39) !important;
+  display: inline;
+  width: 50vw;
+  /* margin: -20px; */
+}
+.MuiButtonBase-root-25 {
+  height: 48px;
+}
+#addItemButton {
+  font-size: 15px;
+  width: 100vw;
+  font-weight: bold;
+  position: fixed;
+  bottom: 0px;
+  height: 66px;
+  /* margin: 0 0 5px 0; */
+  display: block;
+  background-color: #f06a49;
+}
+
 .MuiButtonBase-root-25 .MuiButton-root-1 .MuiButton-text-3 .MuiButton-flat-6 {
   margin: 0 auto;
   display: inline;
 }
-.store {
-  display: inline-block;
-  width: 50vw;
-  /* margin: -5px -3px 0px -3px; */
-}
+
 .storeName {
   display: inline;
   float: right;
   margin: 3vw 5vw 0 0;
   color: white;
+  text-transform: uppercase;
 }
 .MuiPaper-root-80,
 .MuiPaper-elevation1-83,
@@ -180,20 +243,51 @@ ul {
 
 .MuiIcon-label-2 {
   display: inline;
-  width: 100vw;
+  margin: 0px auto;
+  /* width: 100vw; */
+  /* justify-content: center; */
+}
+.storesHeadline {
+  margin: 0 auto;
+  padding: 0 88px;
+  background-color: #f06a49;
+  color: white;
+  display: inline-block;
+  text-align: center;
 }
 /* .MuiPaper-root-80 .MuiPaper-elevation16-98 .MuiDrawer-paper-43 .MuiDrawer-paperAnchorLeft-44 {
   margin: 50px 0 0 0;
 } */
-.editStoreButton {
+.store {
+  display: inline-block;
+  width: 70vw;
+  /* margin: -5px -3px 0px -3px; */
+}
+.addStoreButton {
+  margin: 0 20%;
+}
+.editStoresButton {
   display: inline;
+  padding: -5px !important;
+  float: right;
 }
 .changeStoresButton {
+  display: inline;
   color: #0d47a1;
+  padding: -5px !important;
+}
+.deleteStoresButton {
+  display: inline;
+  margin: 0 5vw;
+  padding: -5px !important;
+  float: left;
 }
 .tabs {
   background-color: #0d47a1;
   padding: 0 0 0 -20px;
+  position: fixed;
+  top: 0px;
+  display: inline-block;
 }
 
 .MuiPaper-rounded-78 {
@@ -209,18 +303,7 @@ ul {
 .MuiTab-wrapper-72 {
   color: white;
   width: 100vw;
-  margin: -10px 0 0 0;
-}
-
-.navSwipe {
-  display: inline;
-  margin: 70% 0;
-}
-
-.sidebar {
-  display: block;
-  margin: 10px auto;
-  font-size: 20px;
+  /* margin: -10px 0 0 0; */
 }
 
 .inputForm {
@@ -242,13 +325,14 @@ ul {
   width: auto;
 }
 
-.groceryItem {
-  display: inline-block;
-  margin: 0px 1px 5px 1px;
-  /* width: 300px; */
+.navSwipe {
+  display: inline;
+  margin: 70% 0;
 }
 
-.checkBox {
-  margin: 8px 10px 0px 10px;
-  display: inline;
+.sidebar {
+  display: block;
+  /* width: 100%; */
+  margin: 10px auto;
+  font-size: 20px;
 }

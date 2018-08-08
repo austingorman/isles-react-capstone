@@ -5,23 +5,44 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
 export default class Nav extends Component {
-  state = { value: 0 };
-
-  handleChange = (event, value) => {
-    this.setState({ value });
+  state = {
+    ShoppingListIsSelected: "selected",
+    ArchivedListIsSelected: "notSelected"
   };
+
+  selectShoppingList = e => {
+    this.setState({
+      ShoppingListIsSelected: "selected",
+      ArchivedListIsSelected: "notSelected"
+    });
+  };
+
+  selectArchive = e => {
+    this.setState({
+      ShoppingListIsSelected: "notSelected",
+      ArchivedListIsSelected: "selected"
+    });
+  };
+
   render() {
     return (
       <Tabs>
         <Tab
-          className="tab"
+          className={this.state.ShoppingListIsSelected}
           label="Shopping List"
           to="/shoppinglist"
           component={Link}
+          onClick={this.selectShoppingList}
         >
           {/* <NavLink to="/shoppinglist" /> */}
         </Tab>
-        <Tab className="tab" label="Archive" to="/archive" component={Link}>
+        <Tab
+          className={this.state.ArchivedListIsSelected}
+          label="Archive"
+          to="/archive"
+          component={Link}
+          onClick={this.selectArchive}
+        >
           {/* <NavLink to="/archive">Archive</NavLink> */}
         </Tab>
       </Tabs>

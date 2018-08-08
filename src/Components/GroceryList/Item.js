@@ -126,7 +126,7 @@ export default class Item extends Component {
   render() {
     if (this.props.item.archived === false) {
       return (
-        <li id="groceryItems">
+        <li className="itemContainer">
           <Card>
             <Checkbox
               className="checkBox"

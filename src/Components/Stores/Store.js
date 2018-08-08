@@ -62,13 +62,16 @@ export default class Store extends Component {
       <li>
         <div className="store">
           <Button
-            className="deleteStoreButton"
+            className="deleteStoresButton"
             type="submit"
             onClick={() => this.deleter("stores", this.props.store.id)}
           >
             <Icon>delete_forever</Icon>
           </Button>
-          <div onClick={this.props.toggleDrawer("left", false)}>
+          <div
+            onClick={this.props.toggleDrawer("left", false)}
+            className="changeStoresButton"
+          >
             <Link to="/shoppingList" className="changeStoresButton">
               <Button
                 onClick={() => {
@@ -85,7 +88,7 @@ export default class Store extends Component {
           </div>
           <Button
             variant="text"
-            className="editStoreButton"
+            className="editStoresButton"
             type="sumbit"
             onClick={this.formLauncher}
           >
