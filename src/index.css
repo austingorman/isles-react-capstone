@@ -7,7 +7,7 @@ body {
 }
 
 * {
-  /* margin: 0 auto; */
+  margin: 0 auto;
   border-radius: 0 !important;
   font-family: "Roboto";
 }
@@ -30,7 +30,7 @@ h1 {
 }
 h3 {
   display: inline-block;
-  margin: 10vw 25vw;
+  margin: 120px 10vw;
 }
 h4 {
   display: inline-block;
@@ -57,7 +57,8 @@ ul {
 
 #navSwipeBar {
   margin: 20px auto;
-  display: inline-block;
+  width: 100%;
+  display: block;
 }
 
 #plus {
@@ -128,11 +129,14 @@ ul {
   display: block;
   background-color: #white;
 }
-
+.MuiButton-root-1 {
+  padding: 0px auto !important;
+  margin: 0px auto;
+}
 .deleteButton {
   display: inline;
   position: relative;
-  top: 2.7px;
+  top: 3px;
   left: 10px;
   float: left;
   width: 10px;
@@ -238,7 +242,14 @@ ul {
 
 .MuiIcon-label-2 {
   display: inline;
-  width: 100vw;
+  margin: 0px auto;
+  /* width: 100vw; */
+  /* justify-content: center; */
+}
+.storesHeadline {
+  margin: 0 auto;
+  padding: 0 90px;
+  display: inline;
 }
 /* .MuiPaper-root-80 .MuiPaper-elevation16-98 .MuiDrawer-paper-43 .MuiDrawer-paperAnchorLeft-44 {
   margin: 50px 0 0 0;
@@ -248,9 +259,13 @@ ul {
   width: 70vw;
   /* margin: -5px -3px 0px -3px; */
 }
+.addStoreButton {
+  margin: 0 20%;
+}
 .editStoresButton {
   display: inline;
   padding: -5px !important;
+  float: right;
 }
 .changeStoresButton {
   display: inline;
@@ -259,7 +274,9 @@ ul {
 }
 .deleteStoresButton {
   display: inline;
+  margin: 0 5vw;
   padding: -5px !important;
+  float: left;
 }
 .tabs {
   background-color: #0d47a1;
@@ -285,17 +302,6 @@ ul {
   /* margin: -10px 0 0 0; */
 }
 
-.navSwipe {
-  display: inline;
-  margin: 70% 0;
-}
-
-.sidebar {
-  display: block;
-  margin: 10px auto;
-  font-size: 20px;
-}
-
 .inputForm {
   /* display: inline; */
   margin: 0px auto;
@@ -313,4 +319,16 @@ ul {
   display: inline;
   margin: 100vw;
   width: auto;
+}
+
+.navSwipe {
+  display: inline;
+  margin: 70% 0;
+}
+
+.sidebar {
+  display: block;
+  /* width: 100%; */
+  margin: 10px auto;
+  font-size: 20px;
 }
