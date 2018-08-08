@@ -3,18 +3,8 @@ import React from "react";
 // import { withStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Button from "@material-ui/core/Button";
-import List from "@material-ui/core/List";
 import Icon from "@material-ui/core/Icon";
 import Sidebar from "./Sidebar";
-
-const styles = {
-  list: {
-    width: 250
-  },
-  fullList: {
-    width: "auto"
-  }
-};
 
 export default class SwipeableTemporaryDrawer extends React.Component {
   state = {
@@ -28,8 +18,6 @@ export default class SwipeableTemporaryDrawer extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
-
     const sideList = (
       <div>
         <Sidebar

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import APIManager from "../../APIManager";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 
 export default class Store extends Component {
