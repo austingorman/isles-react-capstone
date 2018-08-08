@@ -8,38 +8,22 @@
   ],
   "stores": [
     {
-      "name": "Publix",
-      "id": 1
-    },
-    {
       "name": "Kroger",
       "id": 2
+    },
+    {
+      "name": "Publix",
+      "id": 3
     }
   ],
   "items": [
     {
-      "quantity": "2",
-      "name": "dog treats",
-      "aisle": "4",
-      "archived": true,
-      "storeId": "1",
-      "id": 2
-    },
-    {
       "quantity": "9",
       "name": "La Croix",
       "aisle": 1,
-      "archived": false,
+      "archived": true,
       "storeId": "2",
       "id": 3
-    },
-    {
-      "quantity": "7",
-      "name": "Dog Treats",
-      "aisle": 3,
-      "archived": false,
-      "storeId": "1",
-      "id": 4
     },
     {
       "quantity": "3",
@@ -48,6 +32,142 @@
       "archived": true,
       "storeId": "2",
       "id": 5
+    },
+    {
+      "quantity": "12",
+      "name": "Roses",
+      "aisle": "3",
+      "archived": false,
+      "storeId": "3",
+      "id": 6
+    },
+    {
+      "quantity": "64",
+      "name": "Chocolates",
+      "aisle": 7,
+      "archived": false,
+      "storeId": "3",
+      "id": 7
+    },
+    {
+      "quantity": "1",
+      "name": "strawberries",
+      "aisle": 1,
+      "archived": true,
+      "storeId": "3",
+      "id": 8
+    },
+    {
+      "quantity": "2",
+      "name": "Wine Bottles",
+      "aisle": 2,
+      "archived": false,
+      "storeId": "3",
+      "id": 9
+    },
+    {
+      "quantity": "2",
+      "name": "Red Bell Peppers",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 10
+    },
+    {
+      "quantity": "3",
+      "name": "Limes",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 11
+    },
+    {
+      "quantity": "1",
+      "name": "Watermelon",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 12
+    },
+    {
+      "quantity": "4",
+      "name": "carrots",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 13
+    },
+    {
+      "quantity": "2",
+      "name": "green onions",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 14
+    },
+    {
+      "quantity": "1",
+      "name": "lemon",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 15
+    },
+    {
+      "quantity": "1",
+      "name": "peas",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 16
+    },
+    {
+      "quantity": "1",
+      "name": "green beans",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 17
+    },
+    {
+      "quantity": "2",
+      "name": "brussels sprouts",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 18
+    },
+    {
+      "quantity": "5",
+      "name": "peaches",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 19
+    },
+    {
+      "quantity": "5",
+      "name": "BANANAS",
+      "aisle": 0,
+      "archived": false,
+      "storeId": "3",
+      "id": 20
+    },
+    {
+      "quantity": "300",
+      "name": "Dog Treats",
+      "aisle": 9,
+      "archived": false,
+      "storeId": "3",
+      "id": 21
+    },
+    {
+      "quantity": "1",
+      "name": "salmon",
+      "aisle": 3,
+      "archived": false,
+      "storeId": "3",
+      "id": 22
     }
   ]
 }

@@ -14,8 +14,8 @@ export default class ArchivedItem extends Component {
   render() {
     if (this.props.archivedItem.archived === true) {
       return (
-        <li>
-          <Card className="itemContainer">
+        <li className="itemContainer">
+          <Card>
             <Button
               className="deleteButton"
               type="submit"
