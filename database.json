@@ -1,15 +1,25 @@
 {
-  "user": [
+  "users": [
     {
-      "id": 1,
-      "username": "spaceman",
-      "password": "password"
+      "sub": "google-oauth2|114927078561546880615",
+      "id": 1
     }
   ],
   "stores": [
     {
       "name": "Publix",
-      "id": 3
+      "id": 3,
+      "userId": "1"
+    },
+    {
+      "name": "Kroger",
+      "id": 1,
+      "userId": "2"
+    },
+    {
+      "name": "Kroger",
+      "userId": "1",
+      "id": 4
     }
   ],
   "items": [
@@ -17,7 +27,7 @@
       "quantity": "12",
       "name": "Roses",
       "aisle": "3",
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 6
     },
@@ -148,6 +158,14 @@
       "archived": false,
       "storeId": "3",
       "id": 23
+    },
+    {
+      "quantity": "1",
+      "name": "La Croix",
+      "aisle": 25,
+      "archived": false,
+      "storeId": "3",
+      "id": 24
     }
   ]
 }

@@ -5,8 +5,19 @@ import Home from "./Components/Home";
 import APIManager from "./APIManager";
 import HeaderAndNav from "./HeaderAndNav";
 import Auth from "./Components/Auth/Auth";
-import { login, logout, isLoggedIn } from "./Components/Auth/AuthService";
+// import { login, logout, isLoggedIn } from "./Components/Auth/AuthService";
 import { Route } from "react-router-dom";
+import Login from "./Components/Login";
+
+const handleAuthentication = ({ location }) => {
+  if (/access_token|id_token|error/.test(location.hash)) {
+    auth.handleAuthentication();
+  }
+};
+
+const auth = new Auth();
+
+const { isAuthenticated } = auth;
 
 export default class AppViews extends Component {
   state = {
@@ -28,7 +39,8 @@ export default class AppViews extends Component {
     });
   };
   setStoreState = () => {
-    APIManager.getAll("stores").then(stores => {
+    let id = localStorage.getItem("userId");
+    APIManager.getAll(`stores?userId=${id}`).then(stores => {
       this.setState({ store: stores });
     });
   };
@@ -51,8 +63,10 @@ export default class AppViews extends Component {
 
   editStoreName = id => {
     const updatedItem = this.state.newStoreName;
+
     return APIManager.editStoreName(id, updatedItem).then(() => {
-      APIManager.getAll("stores").then(stores =>
+      let id = localStorage.getItem("userId");
+      APIManager.getAll(`stores?userId=${id}`).then(stores =>
         this.setState({
           store: stores,
           newStoreName: ""
@@ -65,8 +79,6 @@ export default class AppViews extends Component {
     this.setState({ newStoreName: storeName });
   };
   render() {
-    // const auth = new Auth();
-    // auth.login();
     return (
       <React.Fragment>
         <HeaderAndNav
@@ -81,12 +93,26 @@ export default class AppViews extends Component {
           item={this.state.item}
           changeStores={this.changeStores}
           setNewStoreName={this.setNewStoreName}
+          isAuthenticated={this.isAuthenticated}
+          auth={auth}
+        />
+        <Route path="/login" component={Login} />
+        <Route
+          path="/callback"
+          render={props => {
+            handleAuthentication(props);
+            return <Home {...props} />;
+          }}
         />
         <Route
           exact
           path="/"
           render={props => {
-            return <Home />;
+            if (isAuthenticated()) {
+              return <Home />;
+            } else {
+              return <Home auth={auth} {...props} />;
+            }
           }}
         />
         <Route

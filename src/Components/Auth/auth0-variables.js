@@ -1,5 +1,5 @@
 export const AUTH_CONFIG = {
-  domain: "YOUR DOMAIN NAME GOES HERE",
-  clientId: "YOUR CLIENT ID",
-  callbackUrl: "YOUR CALLBACK URL"
+  domain: "jumpjump.auth0.com",
+  clientId: "QIFqdhkrAdM5szdKBhWU74dcFkq5Th38",
+  callbackUrl: "http://localhost:3000/callback"
 };

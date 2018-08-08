@@ -29,9 +29,7 @@ const APIManager = Object.create(
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({
-            name: storeName
-          })
+          body: JSON.stringify(storeName)
         }).then(a => a.json());
       }
     },

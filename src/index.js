@@ -5,9 +5,10 @@ import "typeface-roboto";
 import { BrowserRouter as Router } from "react-router-dom";
 import registerServiceWorker from "./registerServiceWorker";
 import Isles from "./Isles";
+import history from "./history";
 
 ReactDOM.render(
-  <Router>
+  <Router history={history}>
     <Isles />
   </Router>,
   document.querySelector("#root")
