@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
 import NavSwipe from "./NavSwipe";
-// import SwipeViews from "./SwipeViews";
 
 export default class HeaderAndNav extends React.Component {
   render() {
@@ -25,7 +24,6 @@ export default class HeaderAndNav extends React.Component {
           </header>
           <Nav />
         </div>
-        {/* <SwipeViews /> */}
       </React.Fragment>
     );
   }
