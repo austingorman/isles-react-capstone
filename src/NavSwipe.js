@@ -1,6 +1,4 @@
 import React from "react";
-// import PropTypes from "prop-types";
-// import { withStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
@@ -60,7 +58,3 @@ export default class SwipeableTemporaryDrawer extends React.Component {
     );
   }
 }
-
-// SwipeableTemporaryDrawer.propTypes = {
-//   classes: PropTypes.object.isRequired
-// };
