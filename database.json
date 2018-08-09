@@ -7,6 +7,10 @@
     {
       "sub": "auth0|5b6b4fae905b2d2efbb90cf2",
       "id": 2
+    },
+    {
+      "sub": "auth0|5b6b7b33b786f531de3a260e",
+      "id": 3
     }
   ],
   "stores": [
@@ -24,6 +28,11 @@
       "name": "Shits R Us",
       "userId": "2",
       "id": 5
+    },
+    {
+      "name": "Target",
+      "userId": "3",
+      "id": 7
     }
   ],
   "items": [
@@ -71,7 +80,7 @@
       "quantity": "1",
       "name": "Watermelon",
       "aisle": 0,
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 12
     },
@@ -103,7 +112,7 @@
       "quantity": "1",
       "name": "peas",
       "aisle": 0,
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 16
     },
@@ -111,7 +120,7 @@
       "quantity": "1",
       "name": "green beans",
       "aisle": 0,
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 17
     },
@@ -119,7 +128,7 @@
       "quantity": "2",
       "name": "brussels sprouts",
       "aisle": 0,
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 18
     },
@@ -127,7 +136,7 @@
       "quantity": "5",
       "name": "peaches",
       "aisle": 0,
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 19
     },
@@ -135,7 +144,7 @@
       "quantity": "5",
       "name": "BANANAS",
       "aisle": 0,
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 20
     },
@@ -194,6 +203,118 @@
       "archived": false,
       "storeId": "3",
       "id": 29
+    },
+    {
+      "quantity": "1",
+      "name": "Queen Bed Sheet",
+      "aisle": 12,
+      "archived": false,
+      "storeId": "7",
+      "id": 30
+    },
+    {
+      "quantity": "4",
+      "name": "Toss Pillows",
+      "aisle": 11,
+      "archived": false,
+      "storeId": "7",
+      "id": 31
+    },
+    {
+      "quantity": "1",
+      "name": "Area rug",
+      "aisle": 11,
+      "archived": false,
+      "storeId": "7",
+      "id": 32
+    },
+    {
+      "quantity": "1",
+      "name": "Shower Curtain",
+      "aisle": 10,
+      "archived": false,
+      "storeId": "7",
+      "id": 33
+    },
+    {
+      "quantity": "1",
+      "name": "Soap Dispenser",
+      "aisle": 10,
+      "archived": false,
+      "storeId": "7",
+      "id": 34
+    },
+    {
+      "quantity": "8",
+      "name": "Towels",
+      "aisle": 9,
+      "archived": false,
+      "storeId": "7",
+      "id": 35
+    },
+    {
+      "quantity": "8",
+      "name": "Wash Clothes",
+      "aisle": 9,
+      "archived": false,
+      "storeId": "7",
+      "id": 36
+    },
+    {
+      "quantity": "2",
+      "name": "Pillow Shams",
+      "aisle": 12,
+      "archived": false,
+      "storeId": "7",
+      "id": 37
+    },
+    {
+      "quantity": "1",
+      "name": "Shower Head",
+      "aisle": 10,
+      "archived": false,
+      "storeId": "7",
+      "id": 38
+    },
+    {
+      "quantity": "4",
+      "name": "Paintings/Art",
+      "aisle": 13,
+      "archived": false,
+      "storeId": "7",
+      "id": 39
+    },
+    {
+      "quantity": "4",
+      "name": "Decorations",
+      "aisle": 13,
+      "archived": false,
+      "storeId": "7",
+      "id": 40
+    },
+    {
+      "quantity": "4",
+      "name": "Candles",
+      "aisle": 14,
+      "archived": false,
+      "storeId": "7",
+      "id": 41
+    },
+    {
+      "quantity": "1",
+      "name": "Candle Holder",
+      "aisle": 14,
+      "archived": false,
+      "storeId": "7",
+      "id": 42
+    },
+    {
+      "quantity": "1",
+      "name": "Toilet Paper Holder",
+      "aisle": 10,
+      "archived": false,
+      "storeId": "7",
+      "id": 43
     }
   ]
 }
