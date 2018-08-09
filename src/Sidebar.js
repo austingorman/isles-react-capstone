@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { login, logout } from "./Components/Auth/Auth";
 import StoreList from "./Components/Stores/StoreList";
 
 export default class Sidebar extends Component {
