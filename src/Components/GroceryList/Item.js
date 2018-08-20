@@ -13,7 +13,6 @@ export default class Item extends Component {
     name: this.props.item.name,
     aisle: this.props.item.aisle
   };
-  // Update state whenever an input field is edited
   handleFieldChange = evt => {
     const stateToChange = { ...this.state };
     stateToChange[evt.target.id] = evt.target.value;
@@ -96,32 +95,6 @@ export default class Item extends Component {
       this.setState({ toggleEditForms: "" });
     }
   };
-
-  // editItem = event => {
-  //   event.preventDefault();
-  //   const ItemId = this.props.item.id;
-  //   const Quantity = event.target.editQuantity.value;
-  //   const ItemName = event.target.editItem.value;
-  //   const Aisle = parseInt(event.target.editAisle.value);
-  //   debugger;
-  //   APIManager.editItems(ItemId, Quantity, ItemName, Aisle, this.props.storeId)
-  //     .then(() => {
-  //       return fetch("http://localhost:5002/items");
-  //     })
-  //     .then(a => a.json())
-  //     .then(() => {
-  //       APIManager.getAll("items?_sort=aisle&_order=asc").then(items =>
-  //         this.props.setTheState({
-  //           item: items
-  //         })
-  //       );
-  //     })
-  //     .then(
-  //       this.setState({
-  //         toggleEditForms: ""
-  //       })
-  //     );
-  // };
 
   render() {
     if (this.props.item.archived === false) {

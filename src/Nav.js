@@ -32,18 +32,14 @@ export default class Nav extends Component {
           to="/shoppinglist"
           component={Link}
           onClick={this.selectShoppingList}
-        >
-          {/* <NavLink to="/shoppinglist" /> */}
-        </Tab>
+        />
         <Tab
           className={this.state.ArchivedListIsSelected}
           label="Archive"
           to="/archive"
           component={Link}
           onClick={this.selectArchive}
-        >
-          {/* <NavLink to="/archive">Archive</NavLink> */}
-        </Tab>
+        />
       </Tabs>
     );
   }

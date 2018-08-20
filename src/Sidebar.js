@@ -5,7 +5,6 @@ export default class Sidebar extends Component {
   render() {
     return (
       <div id="navSwipeBar">
-        {/* {this.props.auth.isAuthenticated() ? <Link to="/">Home</Link> : ""} */}
         {this.props.auth.isAuthenticated() ? (
           <button className="sidebar" onClick={() => this.props.auth.logout()}>
             Log out

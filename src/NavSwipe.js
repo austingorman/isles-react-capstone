@@ -1,6 +1,4 @@
 import React from "react";
-// import PropTypes from "prop-types";
-// import { withStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
@@ -46,13 +44,7 @@ export default class SwipeableTemporaryDrawer extends React.Component {
           onClose={this.toggleDrawer("left", false)}
           onOpen={this.toggleDrawer("left", true)}
         >
-          <div
-            id="drawer"
-            tabIndex={0}
-            // role="button"
-            // onClick={this.toggleDrawer("left", false)}
-            // onKeyDown={this.toggleDrawer("left", false)}
-          >
+          <div id="drawer" tabIndex={0}>
             {sideList}
           </div>
         </SwipeableDrawer>
@@ -60,7 +52,3 @@ export default class SwipeableTemporaryDrawer extends React.Component {
     );
   }
 }
-
-// SwipeableTemporaryDrawer.propTypes = {
-//   classes: PropTypes.object.isRequired
-// };
