@@ -30,7 +30,7 @@ go to auth0-variables and put in your credentials
 
 ### Using Isles
 
-``
+
 1. Click the hamburger menu at the top left.
 2. Sign up for an account or use your google account.
 3. Log in.
@@ -39,4 +39,3 @@ go to auth0-variables and put in your credentials
 6. Edit the aisle number at the store and click the checkbox to archive.
 7. Archived items can be added back to the main list or deleted forever.
 8. Since the items are organized by aisle number, reusing archived items will make your next grocery list much more organized.
-``
