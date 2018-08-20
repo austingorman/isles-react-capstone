@@ -1,14 +1,18 @@
 
-# Isles 
-_X marks the spot_
+# Isles
+
+
+_Makes shopping a breeze_
 
 ## A grocery list maker that creates a reusable archive of items organized by aisle number
 
 ### Technologies Used
-* ReactJS
-* Material-UI
+
+- ReactJS
+- Material-UI
 
 ### Installation
+
 ```clone the directory
 npm install from root
 npm start
@@ -27,9 +31,7 @@ go to auth0-variables and put in your credentials
 7.  Archived items can be added back to the main list or deleted forever.
 8.  Since the items are organized by aisle number, reusing archived items will make your next grocery list much more organized.
 
-
 ### Using Isles
-
 
 1. Click the hamburger menu at the top left.
 2. Sign up for an account or use your google account.

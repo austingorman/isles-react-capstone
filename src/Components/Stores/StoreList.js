@@ -45,9 +45,7 @@ export default class StoreList extends Component {
               <div className="inputForm">
                 <TextField
                   id="helperText"
-                  label="Store" // className={classes.textField}
-                  // helperText="Quantity"
-                  // margin="normal"
+                  label="Store"
                   className="quantityForm"
                   name="storeName"
                   type="text"
@@ -79,7 +77,8 @@ export default class StoreList extends Component {
         </div>
         <div className="addStoreButton">
           <Button onClick={this.formLauncher}>
-            <Icon> add </Icon>New Store
+            <Icon> add </Icon>
+            New Store
           </Button>
         </div>
         {this.state.toggleStores}

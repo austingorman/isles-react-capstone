@@ -15,7 +15,6 @@ export default class ArchivedList extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    // Typical usage (don't forget to compare props):
     if (this.props.selectedStore !== prevProps.selectedStore) {
       this.getAllStoreItems();
     }
@@ -26,9 +25,7 @@ export default class ArchivedList extends Component {
   }
 
   unarchiver = itemId => {
-    // event.preventDefault();
     APIManager.patchItem(itemId, false).then(() => {
-      // this.props.setTheState();
       this.getAllStoreItems();
     });
   };
@@ -36,7 +33,6 @@ export default class ArchivedList extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <HeaderAndNav /> */}
         <div className="overflowArchivedList">
           <ul className="groceryItems">
             {this.state.archivedDisplay.map(archivedItem => (

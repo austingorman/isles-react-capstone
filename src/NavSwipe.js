@@ -44,13 +44,7 @@ export default class SwipeableTemporaryDrawer extends React.Component {
           onClose={this.toggleDrawer("left", false)}
           onOpen={this.toggleDrawer("left", true)}
         >
-          <div
-            id="drawer"
-            tabIndex={0}
-            // role="button"
-            // onClick={this.toggleDrawer("left", false)}
-            // onKeyDown={this.toggleDrawer("left", false)}
-          >
+          <div id="drawer" tabIndex={0}>
             {sideList}
           </div>
         </SwipeableDrawer>

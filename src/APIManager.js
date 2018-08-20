@@ -80,22 +80,7 @@ const APIManager = Object.create(
         }).then(a => a.json());
       }
     },
-    // updateItem: {
-    //   value: (itemId, quantity, itemName, aisle) => {
-    //     return fetch(`http://localhost:5002/items/${itemId}`, {
-    //       method: "PUT",
-    //       headers: {
-    //         "Content-Type": "application/json"
-    //       },
-    //       body: JSON.stringify({
-    //         quantity: quantity,
-    //         name: itemName,
-    //         aisle: aisle,
-    //         archived: false
-    //       })
-    //     });
-    //   }
-    // },
+
     editItems: {
       value: (itemId, dataObject) => {
         return fetch(`http://localhost:5002/items/${itemId}`, {
