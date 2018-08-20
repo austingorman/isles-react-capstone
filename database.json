@@ -11,6 +11,10 @@
     {
       "sub": "auth0|5b6b7b33b786f531de3a260e",
       "id": 3
+    },
+    {
+      "sub": "auth0|5b6c60ee905b2d2efbb94994",
+      "id": 4
     }
   ],
   "stores": [
@@ -33,6 +37,11 @@
       "name": "Target",
       "userId": "3",
       "id": 7
+    },
+    {
+      "name": "Piggly Wiggly",
+      "userId": "4",
+      "id": 8
     }
   ],
   "items": [
@@ -80,7 +89,7 @@
       "quantity": "1",
       "name": "Watermelon",
       "aisle": 0,
-      "archived": true,
+      "archived": false,
       "storeId": "3",
       "id": 12
     },
@@ -96,7 +105,7 @@
       "quantity": "2",
       "name": "green onions",
       "aisle": 0,
-      "archived": true,
+      "archived": false,
       "storeId": "3",
       "id": 14
     },
@@ -104,7 +113,7 @@
       "quantity": "1",
       "name": "lemon",
       "aisle": 0,
-      "archived": true,
+      "archived": false,
       "storeId": "3",
       "id": 15
     },
@@ -112,7 +121,7 @@
       "quantity": "1",
       "name": "peas",
       "aisle": 0,
-      "archived": true,
+      "archived": false,
       "storeId": "3",
       "id": 16
     },
@@ -120,7 +129,7 @@
       "quantity": "1",
       "name": "green beans",
       "aisle": 0,
-      "archived": true,
+      "archived": false,
       "storeId": "3",
       "id": 17
     },
@@ -128,7 +137,7 @@
       "quantity": "2",
       "name": "brussels sprouts",
       "aisle": 0,
-      "archived": true,
+      "archived": false,
       "storeId": "3",
       "id": 18
     },
@@ -136,7 +145,7 @@
       "quantity": "5",
       "name": "peaches",
       "aisle": 0,
-      "archived": true,
+      "archived": false,
       "storeId": "3",
       "id": 19
     },
@@ -144,7 +153,7 @@
       "quantity": "5",
       "name": "BANANAS",
       "aisle": 0,
-      "archived": true,
+      "archived": false,
       "storeId": "3",
       "id": 20
     },
@@ -315,6 +324,22 @@
       "archived": false,
       "storeId": "7",
       "id": 43
+    },
+    {
+      "quantity": "556",
+      "name": "shimps",
+      "aisle": 12,
+      "archived": false,
+      "storeId": "8",
+      "id": 44
+    },
+    {
+      "quantity": "12",
+      "name": "clean up",
+      "aisle": 3,
+      "archived": true,
+      "storeId": "8",
+      "id": 45
     }
   ]
 }

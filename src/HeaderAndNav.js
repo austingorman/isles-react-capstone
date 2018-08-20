@@ -24,7 +24,8 @@ export default class HeaderAndNav extends React.Component {
             <h1>isles</h1>
             <h2 className="storeName">{this.props.selectedStoreName}</h2>
           </header>
-          <Nav />
+          {this.props.auth.isAuthenticated() ? <Nav /> : null}
+          {/* <Nav /> */}
         </div>
       </React.Fragment>
     );

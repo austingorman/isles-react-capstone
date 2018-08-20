@@ -14,18 +14,21 @@ export default class Sidebar extends Component {
             Log In
           </button>
         )}
-        <StoreList
-          setStoreState={this.props.setStoreState}
-          toggleDrawer={this.props.toggleDrawer}
-          store={this.props.store}
-          user={this.props.user}
-          storeNamer={this.props.storeNamer}
-          setTheState={this.props.setItemState}
-          changeStores={this.props.changeStores}
-          handleFieldChange={this.props.handleFieldChange}
-          editStoreName={this.props.editStoreName}
-          setNewStoreName={this.props.setNewStoreName}
-        />
+        {this.props.auth.isAuthenticated() ? (
+          <StoreList
+            setStoreState={this.props.setStoreState}
+            toggleDrawer={this.props.toggleDrawer}
+            store={this.props.store}
+            user={this.props.user}
+            storeNamer={this.props.storeNamer}
+            setTheState={this.props.setItemState}
+            changeStores={this.props.changeStores}
+            handleFieldChange={this.props.handleFieldChange}
+            editStoreName={this.props.editStoreName}
+            setNewStoreName={this.props.setNewStoreName}
+            isAuthenticated={this.props.isAuthenticated}
+          />
+        ) : null}
       </div>
     );
   }

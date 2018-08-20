@@ -1,6 +1,8 @@
+
 # Isles
 
-_X marks the spot_
+
+_Makes shopping a breeze_
 
 ## A grocery list maker that creates a reusable archive of items organized by aisle number
 
