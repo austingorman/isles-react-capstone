@@ -37,6 +37,11 @@
       "name": "Piggly Wiggly",
       "userId": "4",
       "id": 8
+    },
+    {
+      "name": "Kroger",
+      "userId": "1",
+      "id": 9
     }
   ],
   "items": [
@@ -108,7 +113,7 @@
       "quantity": "1",
       "name": "lemon",
       "aisle": 0,
-      "archived": true,
+      "archived": false,
       "storeId": "3",
       "id": 15
     },
