@@ -24,11 +24,6 @@
       "userId": "1"
     },
     {
-      "name": "Kroger",
-      "userId": "1",
-      "id": 4
-    },
-    {
       "name": "Shits R Us",
       "userId": "2",
       "id": 5
@@ -81,13 +76,13 @@
       "quantity": "2",
       "name": "Red Bell Peppers",
       "aisle": "2",
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 10
     },
     {
-      "quantity": "1",
-      "name": "Watermelon",
+      "quantity": "2",
+      "name": "Watermelons",
       "aisle": 0,
       "archived": false,
       "storeId": "3",
@@ -113,7 +108,7 @@
       "quantity": "1",
       "name": "lemon",
       "aisle": 0,
-      "archived": false,
+      "archived": true,
       "storeId": "3",
       "id": 15
     },
@@ -150,14 +145,6 @@
       "id": 19
     },
     {
-      "quantity": "5",
-      "name": "BANANAS",
-      "aisle": 0,
-      "archived": false,
-      "storeId": "3",
-      "id": 20
-    },
-    {
       "quantity": "1",
       "name": "salmon",
       "aisle": 3,
@@ -172,14 +159,6 @@
       "archived": false,
       "storeId": "3",
       "id": 23
-    },
-    {
-      "quantity": "1",
-      "name": "La Croix",
-      "aisle": 25,
-      "archived": false,
-      "storeId": "3",
-      "id": 24
     },
     {
       "quantity": "50000",
@@ -204,14 +183,6 @@
       "archived": false,
       "storeId": "5",
       "id": 28
-    },
-    {
-      "quantity": "1",
-      "name": "La Croix",
-      "aisle": 8,
-      "archived": false,
-      "storeId": "3",
-      "id": 29
     },
     {
       "quantity": "1",
@@ -340,6 +311,14 @@
       "archived": true,
       "storeId": "8",
       "id": 45
+    },
+    {
+      "quantity": "1",
+      "name": "La Croix",
+      "aisle": "2",
+      "archived": true,
+      "storeId": "3",
+      "id": 46
     }
   ]
 }
